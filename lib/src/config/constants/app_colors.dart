@@ -9,4 +9,4 @@ const Color transparentColor = Colors.transparent;
 const Color activeColor = Color(0xFF47D147);
 const Color backgroundColor = Color(0xFFF2F2F2);
 const Color redColor = Color(0xffff0000);
-const Color blueColor = Color(0xff0099FC);
+const Color blueColor = Color(0xff0099FC);     
