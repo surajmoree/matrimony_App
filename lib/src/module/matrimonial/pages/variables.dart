@@ -10,3 +10,5 @@ bool allDropDownVal = false;
 String? selectedReligion;
 String? selectedCommunity;
 String? selectedCountry;
+TextEditingController emailController = TextEditingController();
+TextEditingController phoneController = TextEditingController();

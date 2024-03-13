@@ -51,7 +51,7 @@ var MyFormkey = GlobalKey<FormState>();
   String? selectedColor1;
    late File image1;
 var MyFormkey1 = GlobalKey<FormState>();
-final form1 = MyFormkey.currentState;
+final form1 = MyFormkey1.currentState;
 
 
 

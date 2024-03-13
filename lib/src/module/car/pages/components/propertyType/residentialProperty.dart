@@ -82,7 +82,13 @@ class _ResidentialFormState extends State<ResidentialForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Form(
+ 
+      return 
+
+LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
+{
+  double inputWidth = constraints.maxWidth -20;
+  return  Form(
       key: MyFormkey,
       child: Container(
           child: Column(
@@ -375,8 +381,8 @@ class _ResidentialFormState extends State<ResidentialForm> {
                   height: 16,
                 ),
                 Container(
-                  height: 65,
-                  width: 460,
+                  height: 60,
+                  width: inputWidth,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                       border: Border.all(color: Colors.black)),
@@ -541,9 +547,8 @@ class _ResidentialFormState extends State<ResidentialForm> {
                   height: 20,
                 ),
                 
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(70, 5, 70, 0),
-                  child: Container(
+          Container(
+                     width: inputWidth,
                     child: DropdownButtonFormField<String>(
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -613,40 +618,41 @@ class _ResidentialFormState extends State<ResidentialForm> {
                       },
                     ),
                   ),
-                ),
+          
                 SizedBox(
                   height: 20,
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(70, 5, 70, 0),
-                  child: TextFormField(
-                    controller: locationController,
-                    validator: (String? name) {
-                      if (name!.isEmpty) {
-                        return "Please Enter location";
-                      }
-                      return null;
-                    },
-                    style: TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(5))),
-                        labelText: "Enter location",
-                        hintStyle: TextStyle(color: Colors.black),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black))),
-                  ),
-                ),
+          Container(
+            width: inputWidth,
+            child: TextFormField(
+                      controller: locationController,
+                      validator: (String? name) {
+                        if (name!.isEmpty) {
+                          return "Please Enter location";
+                        }
+                        return null;
+                      },
+                      style: TextStyle(color: Colors.black),
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(5))),
+                          labelText: "Enter location",
+                          hintStyle: TextStyle(color: Colors.black),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black))),
+                    ),
+          ),
+           
                 SizedBox(
                   height: 10,
                 ),
-                Container(
+                   Container(
                   height: 40,
                   child: Row(
                     children: [
-                      SizedBox(width: 65),
+                      SizedBox(width: 10),
                       Icon(Icons.directions_car_outlined),
                       SizedBox(width: 10),
                       Text('Car Details',
@@ -660,94 +666,97 @@ class _ResidentialFormState extends State<ResidentialForm> {
                 SizedBox(
                   height: 8,
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(70, 5, 70, 0),
-                  child: TextFormField(
-                    controller: carNameController,
-                    validator: (String? name) {
-                      if (name!.isEmpty) {
-                        return "Please Enter car name";
-                      }
-                      return null;
-                    },
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(5))),
-                        labelText: "Car Name",
-                        hintStyle: TextStyle(color: Colors.black),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black))),
-                  ),
-                ),
+              Container(
+                 width: inputWidth,
+                child: TextFormField(
+                      controller: carNameController,
+                     validator: (String? name) {
+                        if (name!.isEmpty) {
+                          return "Please Enter Car name";
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(5))),
+                          labelText: "Car Name",
+                          hintStyle: TextStyle(color: Colors.black),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black))),
+                    ),
+              ),
+          
                 SizedBox(
                   height: 8,
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(70, 5, 70, 0),
-                  child: TextFormField(
-                    controller: carDescriptionController,
-                    validator: (String? name) {
-                      if (name!.isEmpty) {
-                        return "Please Enter car description";
-                      }
-                      return null;
-                    },
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(5))),
-                        labelText: "Car description",
-                        hintStyle: TextStyle(color: Colors.black),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black))),
-                  ),
-                ),
+        Container(
+            width: inputWidth,
+          child: TextFormField(
+                      controller: carDescriptionController,
+                      validator: (String? name) {
+                        if (name!.isEmpty) {
+                          return "Please Enter car description";
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(5))),
+                          labelText: "Car description",
+                          hintStyle: TextStyle(color: Colors.black),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black))),
+                    ),
+        ),
+              
                 const SizedBox(
                   height: 8,
                 ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(70, 5, 70, 0),
-                  child: TextFormField(
-                    keyboardType: TextInputType.number,
-                    validator: (String? name) {
-                      if (name!.isEmpty) {
-                        return "Please Enter car price";
-                      }
-                      return null;
-                    },
-                    controller: pricectrl,
-                    decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.label_off_outlined),
-                        suffix: Text(
-                          'INR',
-                          style: TextStyle(color: Colors.black),
-                        ),
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(5))),
-                        labelText: "Price*",
-                        hintStyle: TextStyle(color: Colors.black),
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.blue)),
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black))),
-                  ),
-                ),
+                 Container(
+                     width: inputWidth,
+                   child: TextFormField(
+                      keyboardType: TextInputType.number,
+                      validator: (String? name) {
+                        if (name!.isEmpty) {
+                          return "Please Enter car price";
+                        }
+                        return null;
+                      },
+                      controller: pricectrl,
+                      decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.label_off_outlined),
+                          suffix: Text(
+                            'INR',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(5))),
+                          labelText: "Price*",
+                          hintStyle: TextStyle(color: Colors.black),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.blue)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.black))),
+                    ),
+                 ),
+             
                 const SizedBox(
                   height: 8,
                 ),
                 Container(
                   height: 65,
-                  width: 460,
+                    width: inputWidth,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(5))),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: 220,
+                          width: inputWidth / 2 - 10,
                         height: 60,
                         decoration: BoxDecoration(
                           border: Border.all(),
@@ -760,7 +769,7 @@ class _ResidentialFormState extends State<ResidentialForm> {
                             ),
                             Text(showYear),
                             SizedBox(
-                              width: 120,
+                               width: inputWidth / 2 - 100,
                             ),
                             GestureDetector(
                               onTap: () {
@@ -777,7 +786,7 @@ class _ResidentialFormState extends State<ResidentialForm> {
                       // tyre
 
                       Container(
-                        width: 220,
+                        width: inputWidth / 2 - 10,
                         height: 60,
                         decoration: BoxDecoration(
                           border: Border.all(),
@@ -964,7 +973,7 @@ class _ResidentialFormState extends State<ResidentialForm> {
                 ),
                 Container(
                   height: 60,
-                  width: 460,
+                   width: inputWidth,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(5))),
                   child: Row(
@@ -972,7 +981,7 @@ class _ResidentialFormState extends State<ResidentialForm> {
                     children: [
                       // accidental
                       Container(
-                        width: 220,
+                         width: inputWidth / 2 - 10,
                         height: 60,
                         decoration: BoxDecoration(
                           border: Border.all(),
@@ -1147,7 +1156,7 @@ class _ResidentialFormState extends State<ResidentialForm> {
 
                       Container(
                         height: 60,
-                        width: 220,
+                         width: inputWidth / 2 - 10,
                         decoration: BoxDecoration(
                           border: Border.all(),
                           borderRadius: BorderRadius.circular(10),
@@ -1207,6 +1216,8 @@ class _ResidentialFormState extends State<ResidentialForm> {
                 SizedBox(
                   height: 20,
                 ),
+
+
                 Container(
                   height: 40,
                   child: Row(
@@ -1289,6 +1300,10 @@ class _ResidentialFormState extends State<ResidentialForm> {
         ],
       )),
     );
+   
+});
+ 
+   
   }
 }
 

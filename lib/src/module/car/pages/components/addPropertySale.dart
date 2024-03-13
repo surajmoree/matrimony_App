@@ -29,7 +29,8 @@ class _PropertySaleState extends State<PropertySale> {
     return Scaffold(
 
       extendBodyBehindAppBar: true,
-      body: Column(
+      body: 
+      Column(
         children: [
           Expanded(
             child: CustomScrollView(
@@ -160,8 +161,8 @@ class _PropertySaleState extends State<PropertySale> {
         width: MediaQuery.of(context).size.width * 0.8,
         child: ElevatedButton(
           onPressed: () async {
-            if (form != null &&
-                form!.validate()) //MyFormkey.currentState!.validate()
+            if (form != null || form1 != null &&
+                form!.validate() || form1!.validate()) //MyFormkey.currentState!.validate()
             {
               if (selectedPropertyType == 'Personal') {
                 await _storage.write(

@@ -14,26 +14,26 @@ class _frontPageState extends State<frontPage> {
   int selectedContainerIndex = -1;
   int selectedContainerIndex1 = -1;
 
-  void your_name_drawer(BuildContext context)
-  {
-       Navigator.of(context).push(PageRouteBuilder(
-      opaque: false,
-      pageBuilder: (BuildContext context, _, __) {
-        return _buildDrawer(context);
-      },
-      transitionDuration: Duration(milliseconds: 1000),
-      transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
-        return SlideTransition(
-          position: Tween<Offset>(
-            begin: const Offset(10.0, 0.0),
-            end: Offset.zero,
-          ).animate(animation),
-          child:child,
-        );
-      },
-    ));
+  // void your_name_drawer(BuildContext context)
+  // {
+  //      Navigator.of(context).push(PageRouteBuilder(
+  //     opaque: false,
+  //     pageBuilder: (BuildContext context, _, __) {
+  //       return _buildDrawer(context);
+  //     },
+  //     transitionDuration: Duration(milliseconds: 1000),
+  //     transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
+  //       return SlideTransition(
+  //         position: Tween<Offset>(
+  //           begin: const Offset(10.0, 0.0),
+  //           end: Offset.zero,
+  //         ).animate(animation),
+  //         child:child,
+  //       );
+  //     },
+  //   ));
 
-  }
+  // }
 
     Widget _buildDrawer(BuildContext context) {
     return SizedBox(
@@ -215,7 +215,37 @@ class _frontPageState extends State<frontPage> {
                           onPressed: selectedContainerIndex1 == 0 ||
                                   selectedContainerIndex1 == 1
                               ? () {
-                                your_name_drawer(context);
+                                       Navigator.push(
+                                      context,
+                                      PageRouteBuilder(
+                                        pageBuilder: (context, animation,
+                                            secondaryAnimation) {
+                                          return Scaffold(
+                                            // Wrapping with Scaffold for app bar and other functionalities
+                                            body: your_name(),
+                                          );
+                                        },
+                                        transitionDuration:
+                                            Duration(milliseconds: 1500),
+                                        transitionsBuilder: (context, animation,
+                                            secondaryAnimation, child) {
+                                          var begin = Offset(0.0, 1.0);
+                                          var end = Offset.zero;
+                                          var curve = Curves.easeOutQuart;
+
+                                          var tween = Tween(
+                                                  begin: begin, end: end)
+                                              .chain(CurveTween(curve: curve));
+                                          var offsetAnimation =
+                                              animation.drive(tween);
+
+                                          return SlideTransition(
+                                            position: offsetAnimation,
+                                            child: child,
+                                          );
+                                        },
+                                      ),
+                                    );
                            
                                 }
                               : null,

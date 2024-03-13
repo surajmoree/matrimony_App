@@ -271,34 +271,65 @@ class _your_nameState extends State<your_name> {
                                   if (MyFormkey.currentState!.validate() &&
                                       isDOBValid()) {
                                     Navigator.push(
-                                        context,
-                                        PageRouteBuilder(
-                                            pageBuilder: (context, animation,
-                                                secondaryAnimation) {
-                                              return your_religion();
-                                            },
-                                            transitionDuration:
-                                                Duration(milliseconds: 1000),
-                                            transitionsBuilder: (context,
-                                                animation,
-                                                secondaryAnimation,
-                                                child) {
-                                              var begin = Offset(5.0, 2.0);
-                                              var end = Offset.zero;
-                                              var curve = Curves.easeOutQuart;
+                                      context,
+                                      PageRouteBuilder(
+                                        pageBuilder: (context, animation,
+                                            secondaryAnimation) {
+                                          return Scaffold(
+                                            // Wrapping with Scaffold for app bar and other functionalities
+                                            body: your_religion(),
+                                          );
+                                        },
+                                        transitionDuration:
+                                            Duration(milliseconds: 1500),
+                                        transitionsBuilder: (context, animation,
+                                            secondaryAnimation, child) {
+                                          var begin = Offset(0.0, 1.0);
+                                          var end = Offset.zero;
+                                          var curve = Curves.easeOutQuart;
 
-                                              var tween = Tween(
-                                                      begin: begin, end: end)
-                                                  .chain(
-                                                      CurveTween(curve: curve));
+                                          var tween = Tween(
+                                                  begin: begin, end: end)
+                                              .chain(CurveTween(curve: curve));
+                                          var offsetAnimation =
+                                              animation.drive(tween);
 
-                                              var offsetAnimation =
-                                                  animation.drive(tween);
-                                              return SlideTransition(
-                                                position: offsetAnimation,
-                                                child: child,
-                                              );
-                                            }));
+                                          return SlideTransition(
+                                            position: offsetAnimation,
+                                            child: child,
+                                          );
+                                        },
+                                      ),
+                                    );
+                                    // Navigator.push(
+                                    //     context,
+                                    //     PageRouteBuilder(
+                                    //         pageBuilder: (context, animation,
+                                    //             secondaryAnimation) {
+                                    //           return your_religion();
+                                    //         },
+                                    //         transitionDuration:
+                                    //             Duration(milliseconds: 1000),
+                                    //         transitionsBuilder: (context,
+                                    //             animation,
+                                    //             secondaryAnimation,
+                                    //             child) {
+                                    //           var begin = Offset(5.0, 2.0);
+                                    //           var end = Offset.zero;
+                                    //           var curve = Curves.easeOutQuart;
+
+                                    //           var tween = Tween(
+                                    //                   begin: begin, end: end)
+                                    //               .chain(
+                                    //                   CurveTween(curve: curve));
+
+                                    //           var offsetAnimation =
+                                    //               animation.drive(tween);
+                                    //           return SlideTransition(
+                                    //             position: offsetAnimation,
+                                    //             child: child,
+                                    //           );
+                                    //         }));
                                     print('print');
                                   }
                                 }
