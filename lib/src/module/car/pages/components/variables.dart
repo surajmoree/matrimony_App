@@ -50,8 +50,8 @@ var MyFormkey = GlobalKey<FormState>();
   String selectValue33 = '';
   String? selectedColor1;
    late File image1;
-var MyFormkey1 = GlobalKey<FormState>();
-final form1 = MyFormkey1.currentState;
+// var MyFormkey1 = GlobalKey<FormState>();
+// final form1 = MyFormkey1.currentState;
 
 
 

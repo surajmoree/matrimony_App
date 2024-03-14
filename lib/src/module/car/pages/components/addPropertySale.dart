@@ -161,10 +161,12 @@ class _PropertySaleState extends State<PropertySale> {
         width: MediaQuery.of(context).size.width * 0.8,
         child: ElevatedButton(
           onPressed: () async {
-            if (form != null || form1 != null &&
-                form!.validate() || form1!.validate()) //MyFormkey.currentState!.validate()
+            if (form != null  &&
+                form!.validate() ) //MyFormkey.currentState!.validate()
             {
+                    
               if (selectedPropertyType == 'Personal') {
+              
                 await _storage.write(
                     key: 'selectedButton', value: selectedButton);
                 await _storage.write(
@@ -212,7 +214,9 @@ class _PropertySaleState extends State<PropertySale> {
                 print('${image.path}');
 
                 print('personal clciked');
-              } else if (selectedPropertyType == 'Transport') {
+              } 
+               if (selectedPropertyType == 'Transport') {
+
                 await _storage.write(
                     key: 'selectedButton', value: selectedButton);
                 await _storage.write(
@@ -237,7 +241,7 @@ class _PropertySaleState extends State<PropertySale> {
                     key: 'Accidental', value: accidentalController1.text);
                 await _storage.write(
                     key: 'selectedCity', value: selectedColor1 ?? "");
-                if (image != null) {
+                if (image1 != null) {
                   await _storage.write(key: 'imagePath', value: image1.path);
                 }
 
@@ -261,8 +265,8 @@ class _PropertySaleState extends State<PropertySale> {
 
                 print('transport clicked');
               }
-              //      moveToNext();
-            }
+          }
+
           },
           child: Text('Publish'),
         ),

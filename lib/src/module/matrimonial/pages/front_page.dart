@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:strava_clone/src/module/matrimonial/pages/animation/textAnimation.dart';
 import 'package:strava_clone/src/module/matrimonial/pages/drawers/drawer_Your_Name.dart';
+import 'package:strava_clone/src/module/matrimonial/pages/variables.dart';
 
 // ignore: camel_case_types
 class frontPage extends StatefulWidget {
@@ -14,32 +15,11 @@ class _frontPageState extends State<frontPage> {
   int selectedContainerIndex = -1;
   int selectedContainerIndex1 = -1;
 
-  // void your_name_drawer(BuildContext context)
-  // {
-  //      Navigator.of(context).push(PageRouteBuilder(
-  //     opaque: false,
-  //     pageBuilder: (BuildContext context, _, __) {
-  //       return _buildDrawer(context);
-  //     },
-  //     transitionDuration: Duration(milliseconds: 1000),
-  //     transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
-  //       return SlideTransition(
-  //         position: Tween<Offset>(
-  //           begin: const Offset(10.0, 0.0),
-  //           end: Offset.zero,
-  //         ).animate(animation),
-  //         child:child,
-  //       );
-  //     },
-  //   ));
-
-  // }
-
     Widget _buildDrawer(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.8, // 80% width of the screen
+      width: MediaQuery.of(context).size.width * 0.8, 
       child: Drawer(
-        // child: Text('hekkii',style: TextStyle(color: Colors.amber),),
+      
         child: your_name(),
       ),
     );
@@ -49,7 +29,7 @@ class _frontPageState extends State<frontPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-      
+     
           child: Column(
             children: [
                const SizedBox(
@@ -292,6 +272,7 @@ class _frontPageState extends State<frontPage> {
                                 ),
                         ),
                       ),
+                      
             ],
           ),
         ),
@@ -340,6 +321,14 @@ class _frontPageState extends State<frontPage> {
       onTap: () {
         setState(() {
           selectedContainerIndex1 = index1;
+          if(index1 == 0)
+          {
+            selectedGender = 'Male';
+          }
+          else if(index1 == 1)
+          {
+            selectedGender = 'Female';
+          }
         });
       },
       child: Container(

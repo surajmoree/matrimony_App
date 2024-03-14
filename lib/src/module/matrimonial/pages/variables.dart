@@ -12,3 +12,4 @@ String? selectedCommunity;
 String? selectedCountry;
 TextEditingController emailController = TextEditingController();
 TextEditingController phoneController = TextEditingController();
+   String selectedGender = '';
