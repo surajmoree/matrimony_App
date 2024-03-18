@@ -29,7 +29,11 @@ class _your_nameState extends State<your_name> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+      body:
+           LayoutBuilder(builder: (BuildContext context,BoxConstraints constraints )
+                      {
+                        double inputWidth = constraints.maxWidth-50;
+                        return    SingleChildScrollView(
         child: Container(
             child: Column(
           children: [
@@ -55,16 +59,18 @@ class _your_nameState extends State<your_name> {
             SizedBox(
               height: 30,
             ),
-            Padding(
-              padding: const EdgeInsets.only(right: 150),
-              child: Text(
-                'Your name',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Color.fromARGB(255, 240, 135, 170)),
-              ),
-            ),
+         Container(
+          width: inputWidth,
+      
+           child: Text(
+                  'Your name',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      color: Color.fromARGB(255, 240, 135, 170)),
+                ),
+         ),
+         
             SizedBox(
               height: 20,
             ),
@@ -351,7 +357,10 @@ class _your_nameState extends State<your_name> {
                 ))
           ],
         )),
-      ),
+      );
+                      }),
+      
+    
     );
   }
 }

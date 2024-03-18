@@ -91,25 +91,47 @@ class _your_QualificationState extends State<your_Qualification> {
               const SizedBox(
                 height: 20,
               ),
-              InkWell(
-                  onTap: showQualificationOption,
-                  child: Container(
-                    width: inputWidth,
-                    height: 60,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        border: Border.all()),
-                    child: Expanded(
-                        child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Text(selectedQuali.isNotEmpty
+                                   InkWell(
+ onTap: showQualificationOption,
+     child: Container(
+            width: inputWidth,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all()),
+                            child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                               child: Text(selectedQuali.isNotEmpty
                             ? selectedQuali
                             : 'Your highest qualification'),
-                      ),
-                    )),
-                  )),
+                        ),
+                      )
+   
+        ),
+   ),
+
+              // InkWell(
+              //     onTap: showQualificationOption,
+              //     child: Container(
+              //       width: inputWidth,
+              //       height: 60,
+              //       decoration: BoxDecoration(
+              //           borderRadius: BorderRadius.circular(5),
+              //           border: Border.all()),
+              //       child: Expanded(
+              //           child: Align(
+              //         alignment: Alignment.centerLeft,
+              //         child: Padding(
+              //           padding: const EdgeInsets.only(left: 10.0),
+                        // child: Text(selectedQuali.isNotEmpty
+                        //     ? selectedQuali
+                        //     : 'Your highest qualification'),
+              //         ),
+              //       )),
+              //     )),
+                  
               SizedBox(
                 height: 20,
               ),

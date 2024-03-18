@@ -4,6 +4,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:strava_clone/src/boot.dart';
 
 import '../variables.dart';
+import 'drawer_Varify_Contact_Detail.dart';
 
 class your_Photo extends StatefulWidget {
   //   final String selectedGender;
@@ -360,6 +361,39 @@ class _your_PhotoState extends State<your_Photo> with SingleTickerProviderStateM
     setState(() {
       if (xfilepick != null) {
         gallaryFile = File(pickedFile!.path);
+        print('image selected');
+            Navigator.push(
+                    context,
+                    PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return Scaffold(
+                          // Wrapping with Scaffold for app bar and other functionalities
+                          body: verify_contact(),
+                        );
+                      },
+                      transitionDuration: Duration(milliseconds: 1500),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        var begin = Offset(0.0, 1.0);
+                        var end = Offset.zero;
+                        var curve = Curves.easeOutQuart;
+
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
+                        var offsetAnimation = animation.drive(tween);
+
+                        return SlideTransition(
+                          position: animation.drive(Tween(
+                                  begin: Offset(0.0, 1.0), end: Offset.zero)
+                              .chain(CurveTween(curve: Curves.easeOutQuart))),
+                          child: child,
+                          // position: offsetAnimation,
+                          // child: child,
+                        );
+                      },
+                    ),
+                  );
+
       } else {
         ScaffoldMessenger.of(context)
             .showSnackBar(SnackBar(content: Text('Nothing is selected')));

@@ -85,16 +85,17 @@ class _about_YourselfState extends State<about_Yourself> {
                    const SizedBox(
                 height: 50,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 120),
-                child: Text(
-                  'About yourself',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      color: Color.fromARGB(255, 240, 135, 170)),
-                ),
-              ),
+             Container(
+              width: inputWidth,
+               child: Text(
+                    'About yourself',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Color.fromARGB(255, 240, 135, 170)),
+                  ),
+             ),
+             
               const SizedBox(
                 height: 5,
               ),

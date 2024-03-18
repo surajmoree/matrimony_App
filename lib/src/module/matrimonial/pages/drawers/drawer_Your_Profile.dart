@@ -1,4 +1,4 @@
-import 'package:flutter/scheduler.dart' show timeDilation;
+
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:strava_clone/src/boot.dart';
 import 'package:strava_clone/src/module/matrimonial/pages/drawers/State.dart';
@@ -238,26 +238,26 @@ class _your_profileState extends State<your_profile>
             SizedBox(
               height: 30,
             ),
-            Container(
-              width: 300,
-              height: 60,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                border: Border.all(),
-              ),
-              child: CheckboxListTile(
-                activeColor: Color.fromARGB(255, 240, 135, 170),
-                //    tileColor: Color.fromARGB(255, 240, 135, 170),
-                controlAffinity: ListTileControlAffinity.leading,
-                title: const Text('Not particular about my partners community'),
-                value: timeDilation != 1.0,
-                onChanged: (bool? value) {
-                  setState(() {
-                    timeDilation = value! ? 10.0 : 1.0;
-                  });
-                },
-              ),
-            ),
+            // Container(
+            //   width: 300,
+            //   height: 60,
+            //   decoration: BoxDecoration(
+            //     borderRadius: BorderRadius.circular(5),
+            //     border: Border.all(),
+            //   ),
+            //   child: CheckboxListTile(
+            //     activeColor: Color.fromARGB(255, 240, 135, 170),
+            //     //    tileColor: Color.fromARGB(255, 240, 135, 170),
+            //     controlAffinity: ListTileControlAffinity.leading,
+            //     title: const Text('Not particular about my partners community'),
+            //     value: timeDilation != 1.0,
+            //     onChanged: (bool? value) {
+            //       setState(() {
+            //         timeDilation = value! ? 10.0 : 1.0;
+            //       });
+            //     },
+            //   ),
+            // ),
             SizedBox(
               height: 30,
             ),
@@ -275,7 +275,8 @@ class _your_profileState extends State<your_profile>
                       pageBuilder: (context, animation, secondaryAnimation) {
                         return Scaffold(
                           // Wrapping with Scaffold for app bar and other functionalities
-                          body: maritalStatus(),
+                         body: maritalStatus(),
+                  //     body:your_Qualification (),
                         );
                       },
                       transitionDuration: Duration(milliseconds: 1500),

@@ -15,7 +15,7 @@ class your_Email_Phone extends StatefulWidget {
 
 class _your_Email_PhoneState extends State<your_Email_Phone> {
   var MyFormkey = GlobalKey<FormState>();
-  String selectedCountryCode = '+92';
+
   bool allFieldsFilled = false;
 
   void checkFields() {
@@ -197,6 +197,9 @@ class _your_Email_PhoneState extends State<your_Email_Phone> {
                           padding: const EdgeInsets.only(left: 0, right: 3),
                           child: TextFormField(
                               controller: phoneController,
+                           
+                              
+                             
                               onChanged: (value) => checkFields(),
                               keyboardType: TextInputType.number,
                               inputFormatters: [
@@ -224,6 +227,7 @@ class _your_Email_PhoneState extends State<your_Email_Phone> {
                   ),
                 ),
               ),
+          
               SizedBox(
                 height: 50,
               ),

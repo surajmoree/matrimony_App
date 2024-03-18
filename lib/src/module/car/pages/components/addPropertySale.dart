@@ -36,14 +36,21 @@ class _PropertySaleState extends State<PropertySale> {
             child: CustomScrollView(
               slivers: [
                 const SliverAppBar(
+                  //   automaticallyImplyLeading: false,
+                     iconTheme: IconThemeData(color: Colors.blue),
+                     
                   backgroundColor: Colors.white,
                   pinned: true,
-                  title: Center(
-                    child: Text(
+                  title:  Text(
                       'Add car For Sale',
                       style: TextStyle(color: Colors.black),
                     ),
-                  ),
+                    centerTitle: true,
+             
+                  // leading: IconButton(onPressed: (){
+                  
+                  // }, icon: Icon(Icons.abc)),
+               
                 ),
                 SliverList(
                   delegate: SliverChildBuilderDelegate(

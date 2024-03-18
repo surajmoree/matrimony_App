@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../localstorage/model.dart';
@@ -14,18 +13,17 @@ class CarPage extends StatefulWidget {
 }
 
 class _CarPageState extends State<CarPage> {
+  final StorageService _strorageService = StorageService();
+  late List<StorageItem> _items;
+  bool _loading = true;
 
-    final StorageService _strorageService = StorageService();
-  late List<StorageItem>  _items;
-    bool _loading = true;
-
-        @override
+  @override
   void initState() {
     super.initState();
     initList();
   }
 
-    void initList() async {
+  void initList() async {
     _items = await _strorageService.readAllSecureData();
     _loading = false;
     setState(() {});
@@ -35,11 +33,20 @@ class _CarPageState extends State<CarPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-            child: Text(
-          'Add Car',
-          style: TextStyle(color: Colors.black),
-        )),
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+    icon: Icon(Icons.arrow_back_sharp,color: Colors.blue,),
+          onPressed: (){
+            Navigator.pushNamed(context, '/');
+          },
+        ),
+        title:
+         Text(
+                      'Add Car',
+                      style: TextStyle(color: Colors.black),
+                    ),
+
+      centerTitle: true,
         backgroundColor: Colors.white,
       ),
       body: Column(
@@ -49,7 +56,7 @@ class _CarPageState extends State<CarPage> {
           ),
           ListTile(
             title: Card(
-              elevation: 10,
+            
               child: Container(
                 height: 70,
                 decoration: BoxDecoration(
@@ -66,8 +73,6 @@ class _CarPageState extends State<CarPage> {
                         ),
                       ],
                     ),
-
-
                     Container(
                         height: 30,
                         width: MediaQuery.of(context).size.width * 0.8,
@@ -76,11 +81,9 @@ class _CarPageState extends State<CarPage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>      PropertySale() 
-                                      ));
+                                      builder: (context) => PropertySale()));
                             },
                             child: Text('For Sale'))),
-
                   ],
                 ),
               ),
@@ -91,7 +94,7 @@ class _CarPageState extends State<CarPage> {
           ),
           ListTile(
             title: Card(
-              elevation: 10,
+           
               child: Container(
                 height: 70,
                 decoration: BoxDecoration(
@@ -122,7 +125,7 @@ class _CarPageState extends State<CarPage> {
           ),
           ListTile(
             title: Card(
-              elevation: 10,
+             
               child: Container(
                 height: 70,
                 decoration: BoxDecoration(
@@ -143,13 +146,12 @@ class _CarPageState extends State<CarPage> {
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: ElevatedButton(
                             onPressed: () {
-                                     Navigator.push(
+                              Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) =>    newRequest()  
-                                      ));
-                              
-                            }, child: Text('New Request')))
+                                      builder: (context) => newRequest()));
+                            },
+                            child: Text('New Request')))
                   ],
                 ),
               ),
@@ -158,7 +160,5 @@ class _CarPageState extends State<CarPage> {
         ],
       ),
     );
-    
-
   }
 }

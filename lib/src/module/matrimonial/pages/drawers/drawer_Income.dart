@@ -163,24 +163,43 @@ class _your_IncomeState extends State<your_Income> {
                 height: 20,
               ),
 
-              InkWell(
-                onTap: showIncomeOption,
-                child: Container(
-                    width: inputWidth,
+                                             InkWell(
+ onTap: showIncomeOption,
+     child: Container(
+            width: inputWidth,
                       height: 60,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
                           border: Border.all()),
-                          child: Expanded(child: Align(
-                            alignment: Alignment.centerLeft,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10.0),
-                              child: Text(selectedIncome.isNotEmpty ? selectedIncome : 'Your anuual income'),
-                            ),
-                          )),
+                            child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                               child: Text(selectedIncome.isNotEmpty ? selectedIncome : 'Your anuual income'),
+                        ),
+                      )
+   
+        ),
+   ),
+
+              // InkWell(
+              //   onTap: showIncomeOption,
+              //   child: Container(
+              //       width: inputWidth,
+              //         height: 60,
+              //         decoration: BoxDecoration(
+              //             borderRadius: BorderRadius.circular(5),
+              //             border: Border.all()),
+              //             child: Expanded(child: Align(
+              //               alignment: Alignment.centerLeft,
+              //               child: Padding(
+              //                 padding: const EdgeInsets.only(left: 10.0),
+              //                 child: Text(selectedIncome.isNotEmpty ? selectedIncome : 'Your anuual income'),
+              //               ),
+              //             )),
               
-                ),
-              ),
+              //   ),
+              // ),
 
               Container(
                 width: inputWidth,
@@ -244,46 +263,68 @@ class _your_IncomeState extends State<your_Income> {
                    const SizedBox(
                 height: 20,
               ),
-              InkWell(
-                onTap: showWorkTypeOption,
-                child: Container(
-                      width: inputWidth,
-                        height: 60,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(5),
-                            border: Border.all()),
-              
-                            child: Expanded(child: Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 10.0),
+
+                                                     InkWell(
+onTap: showWorkTypeOption,
+     child: Container(
+            width: inputWidth,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all()),
+                            child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
                                 child: Text(selectedWorkType.isNotEmpty ? selectedWorkType : 'You work with'),
-                              ),
-                            ),),
+                        ),
+                      )
+   
+        ),
+   ),
+
               
-                ),
-              ),
+              // InkWell(
+              //   onTap: showWorkTypeOption,
+              //   child: Container(
+              //         width: inputWidth,
+              //           height: 60,
+              //           decoration: BoxDecoration(
+              //               borderRadius: BorderRadius.circular(5),
+              //               border: Border.all()),
+              
+              //               child: Expanded(child: Align(
+              //                 alignment: Alignment.centerLeft,
+              //                 child: Padding(
+              //                   padding: const EdgeInsets.only(left: 10.0),
+              //                   child: Text(selectedWorkType.isNotEmpty ? selectedWorkType : 'You work with'),
+              //                 ),
+              //               ),),
+              
+              //   ),
+              // ),
 
                   const SizedBox(
                 height: 20,
               ),
-
-              InkWell(
-                onTap: showWorkAsOption,
-                child: Container(
-                         width: inputWidth,
-                          height: 60,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(5),
-                              border: Border.all()),
-                              child: Expanded(child: Padding(
-                                 padding: const EdgeInsets.only(left: 10.0),
-                                child: Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(selectedWorkAs.isNotEmpty ? selectedWorkAs : 'You work as'),),
-                              )), 
-                ),
-              ),
+     
+                                          InkWell(
+  onTap: showWorkAsOption,
+     child: Container(
+            width: inputWidth,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all()),
+                            child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                                child: Text(selectedWorkAs.isNotEmpty ? selectedWorkAs : 'You work as'),),
+                        ),
+                      )
+   
+        ),
 
                   const SizedBox(
                 height: 20,

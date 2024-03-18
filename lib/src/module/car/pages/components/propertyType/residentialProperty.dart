@@ -38,6 +38,365 @@ class _ResidentialFormState extends State<ResidentialForm> {
     });
   }
 
+  void varifiedCarDialog() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return StatefulBuilder(builder: (context, StateSetter setState) {
+            return Dialog(
+              elevation: 16,
+              child: Container(
+                height: 220,
+                width: 45,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(5)),
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(color: Colors.grey.shade500),
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Center(child: Text('Status')),
+                    ),
+                    Container(
+                      height: 120,
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(color: Colors.grey.shade500),
+                              ),
+                              color: Colors.white,
+                            ),
+                            child: ListTile(
+                              title: Text('YES'),
+                              leading: Radio(
+                                value: 'YES',
+                                groupValue: selectValue1,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectValue1 = value.toString();
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(color: Colors.grey.shade500),
+                              ),
+                              color: Colors.white,
+                            ),
+                            child: ListTile(
+                              title: Text('NO'),
+                              leading: Radio(
+                                //  value: 2,
+                                value: 'NO',
+                                groupValue: selectValue1,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectValue1 = value.toString();
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 50,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(5),
+                            bottomRight: Radius.circular(5)),
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 55,
+                          ),
+                          Container(
+                            width: 80,
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Cancle')),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            width: 80,
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  varicarController.text = selectValue1;
+
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Ok')),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          });
+        });
+  }
+
+  void showTyreDialog() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return StatefulBuilder(builder: (context, StateSetter setState) {
+            return Dialog(
+              elevation: 16,
+              child: Container(
+                height: 220,
+                width: 45,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                              color: Color.fromRGBO(158, 158, 158, 1)),
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Center(child: Text('Status')),
+                    ),
+                    Container(
+                      height: 120,
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(color: Colors.grey.shade500),
+                              ),
+                              color: Colors.white,
+                            ),
+                            child: ListTile(
+                              title: Text('NEW'),
+                              leading: Radio(
+                                value: 'NEW',
+                                groupValue: selectValue2,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectValue2 = value.toString();
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(color: Colors.grey.shade500),
+                              ),
+                              color: Colors.white,
+                            ),
+                            child: ListTile(
+                              title: Text('OLD'),
+                              leading: Radio(
+                                //  value: 2,
+                                value: 'OLD',
+                                groupValue: selectValue2,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectValue2 = value.toString();
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 50,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(5),
+                            bottomRight: Radius.circular(5)),
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 55,
+                          ),
+                          Container(
+                            width: 80,
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Cancle')),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            width: 80,
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  tyrefieldController.text = selectValue2;
+
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Ok')),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          });
+        });
+  }
+
+  void showAccidentalDialog() {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return StatefulBuilder(builder: (context, StateSetter setState) {
+            return Dialog(
+              elevation: 16,
+              child: Container(
+                height: 220,
+                width: 45,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(5))),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 50,
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(color: Colors.grey.shade500),
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Center(child: Text('Status')),
+                    ),
+                    Container(
+                      height: 120,
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(color: Colors.grey.shade500),
+                              ),
+                              color: Colors.white,
+                            ),
+                            child: ListTile(
+                              title: Text('YES'),
+                              leading: Radio(
+                                value: 'YES',
+                                groupValue: selectValue3,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectValue3 = value.toString();
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border(
+                                bottom: BorderSide(color: Colors.grey.shade500),
+                              ),
+                              color: Colors.white,
+                            ),
+                            child: ListTile(
+                              title: Text('NO'),
+                              leading: Radio(
+                                //  value: 2,
+                                value: 'NO',
+                                groupValue: selectValue3,
+                                onChanged: (value) {
+                                  setState(() {
+                                    selectValue3 = value.toString();
+                                  });
+                                },
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      height: 50,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(5),
+                            bottomRight: Radius.circular(5)),
+                      ),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 55,
+                          ),
+                          Container(
+                            width: 80,
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Cancle')),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Container(
+                            width: 80,
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  accidentalController.text = selectValue3;
+
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Ok')),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          });
+        });
+  }
+
   Future getImageFromGallery(ImageSource source) async {
     final pickedFile = await picker.pickImage(source: source);
     setState(() {
@@ -82,473 +441,380 @@ class _ResidentialFormState extends State<ResidentialForm> {
 
   @override
   Widget build(BuildContext context) {
- 
-      return 
-
-LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
-{
-  double inputWidth = constraints.maxWidth -20;
-  return  Form(
-      key: MyFormkey,
-      child: Container(
-          child: Column(
-        children: <Widget>[
-          Container(
-            height: 40,
-            child: Row(
-              children: const [
-                SizedBox(width: 100),
-                Icon(Icons.directions_car_outlined),
-                SizedBox(width: 10),
-                Text('Brand',
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500))
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 10,
-          ),
-          Container(
-            //    height: 300,
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+      double inputWidth = constraints.maxWidth - 20;
+      return Form(
+        key: MyFormkey,
+        child: Container(
             child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                        width: 150,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                selectedButton = 'Hyundai';
-                              });
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: selectedButton == 'Hyundai'
-                                    ? Colors.blue
-                                    : Colors.white),
-                            child: Text(
-                              'Hyundai',
-                              style: TextStyle(
-                                  color: selectedButton == 'Hyundai'
-                                      ? Colors.white
-                                      : Colors.black),
-                            ))),
-                    Container(
-                      width: 150,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              selectedButton = 'Kia';
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: selectedButton == 'Kia'
-                                  ? Colors.blue
-                                  : Colors.white),
-                          child: Text(
-                            'Kia',
-                            style: TextStyle(
-                                color: selectedButton == 'Kia'
-                                    ? Colors.white
-                                    : Colors.black),
-                          )),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                        width: 150,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                selectedButton = 'Daewoo';
-                              });
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: selectedButton == 'Daewoo'
-                                    ? Colors.blue
-                                    : Colors.white),
-                            child: Text(
-                              'Daewoo',
-                              style: TextStyle(
-                                  color: selectedButton == 'Daewoo'
-                                      ? Colors.white
-                                      : Colors.black),
-                            ))),
-                    Container(
-                      width: 150,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              selectedButton = 'Renault';
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: selectedButton == 'Renault'
-                                  ? Colors.blue
-                                  : Colors.white),
-                          child: Text(
-                            'Renault',
-                            style: TextStyle(
-                                color: selectedButton == 'Renault'
-                                    ? Colors.white
-                                    : Colors.black),
-                          )),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                        width: 150,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                selectedButton = 'SsangYong';
-                              });
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: selectedButton == 'SsangYong'
-                                    ? Colors.blue
-                                    : Colors.white),
-                            child: Text(
-                              'SsangYong',
-                              style: TextStyle(
-                                  color: selectedButton == 'SsangYong'
-                                      ? Colors.white
-                                      : Colors.black),
-                            ))),
-                    Container(
-                      width: 150,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              selectedButton = 'Alpheon';
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: selectedButton == 'Alpheon'
-                                  ? Colors.blue
-                                  : Colors.white),
-                          child: Text(
-                            'Alpheon ',
-                            style: TextStyle(
-                                color: selectedButton == 'Alpheon'
-                                    ? Colors.white
-                                    : Colors.black),
-                          )),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                        width: 150,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                selectedButton = 'Proto';
-                              });
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: selectedButton == 'Proto'
-                                    ? Colors.blue
-                                    : Colors.white),
-                            child: Text(
-                              'Proto',
-                              style: TextStyle(
-                                  color: selectedButton == 'Proto'
-                                      ? Colors.white
-                                      : Colors.black),
-                            ))),
-                    Container(
-                      width: 150,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              selectedButton = 'Asia Motors';
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: selectedButton == 'Asia Motors'
-                                  ? Colors.blue
-                                  : Colors.white),
-                          child: Text(
-                            'Asia Motors',
-                            style: TextStyle(
-                                color: selectedButton == 'Asia Motors'
-                                    ? Colors.white
-                                    : Colors.black),
-                          )),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                        width: 150,
-                        child: ElevatedButton(
-                            onPressed: () {
-                              setState(() {
-                                selectedButton = 'volvo';
-                              });
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: selectedButton == 'volvo'
-                                    ? Colors.blue
-                                    : Colors.white),
-                            child: Text(
-                              'volvo',
-                              style: TextStyle(
-                                  color: selectedButton == 'volvo'
-                                      ? Colors.white
-                                      : Colors.black),
-                            ))),
-                    Container(
-                      width: 150,
-                      child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              selectedButton = 'Genesis';
-                            });
-                          },
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: selectedButton == 'Genesis'
-                                  ? Colors.blue
-                                  : Colors.white),
-                          child: Text(
-                            'Genesis',
-                            style: TextStyle(
-                                color: selectedButton == 'Genesis'
-                                    ? Colors.white
-                                    : Colors.black),
-                          )),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                  ],
-                ),
-                SizedBox(
-                  height: 16,
-                ),
-                Container(
-                  height: 60,
-                  width: inputWidth,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(5)),
-                      border: Border.all(color: Colors.black)),
-                  child: Row(
-                    children: [
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Icon(Icons.directions_car_filled),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Expanded(child: Text('Varified Car')),
-                      SizedBox(width: 110),
-                      // Text();
-                      Text('${selectValue1}'),
-
-                      IconButton(
-                          onPressed: () {
-                            showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return StatefulBuilder(
-                                      builder: (context, StateSetter setState) {
-                                    return Dialog(
-                                      elevation: 16,
-                                      child: Container(
-                                        height: 220,
-                                        width: 45,
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.all(
-                                              Radius.circular(5)),
-                                        ),
-                                        child: Column(
-                                          children: [
-                                            Container(
-                                              height: 50,
-                                              decoration: BoxDecoration(
-                                                border: Border(
-                                                  bottom: BorderSide(
-                                                      color:
-                                                          Colors.grey.shade500),
-                                                ),
-                                                color: Colors.white,
-                                              ),
-                                              child:
-                                                  Center(child: Text('Status')),
-                                            ),
-                                            Container(
-                                              height: 120,
-                                              child: Column(
-                                                children: <Widget>[
-                                                  Container(
-                                                    height: 60,
-                                                    decoration: BoxDecoration(
-                                                      border: Border(
-                                                        bottom: BorderSide(
-                                                            color: Colors
-                                                                .grey.shade500),
-                                                      ),
-                                                      color: Colors.white,
-                                                    ),
-                                                    child: ListTile(
-                                                      title: Text('YES'),
-                                                      leading: Radio(
-                                                        value: 'YES',
-                                                        groupValue:
-                                                            selectValue1,
-                                                        onChanged: (value) {
-                                                          setState(() {
-                                                            selectValue1 = value
-                                                                .toString();
-                                                          });
-                                                        },
-                                                      ),
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    height: 60,
-                                                    decoration: BoxDecoration(
-                                                      border: Border(
-                                                        bottom: BorderSide(
-                                                            color: Colors
-                                                                .grey.shade500),
-                                                      ),
-                                                      color: Colors.white,
-                                                    ),
-                                                    child: ListTile(
-                                                      title: Text('NO'),
-                                                      leading: Radio(
-                                                        //  value: 2,
-                                                        value: 'NO',
-                                                        groupValue:
-                                                            selectValue1,
-                                                        onChanged: (value) {
-                                                          setState(() {
-                                                            selectValue1 = value
-                                                                .toString();
-                                                          });
-                                                        },
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            Container(
-                                              height: 50,
-                                              decoration: const BoxDecoration(
-                                                borderRadius: BorderRadius.only(
-                                                    bottomLeft:
-                                                        Radius.circular(5),
-                                                    bottomRight:
-                                                        Radius.circular(5)),
-                                              ),
-                                              child: Row(
-                                                children: [
-                                                  SizedBox(
-                                                    width: 55,
-                                                  ),
-                                                  Container(
-                                                    width: 80,
-                                                    child: ElevatedButton(
-                                                        onPressed: () {
-                                                          Navigator.of(context)
-                                                              .pop();
-                                                        },
-                                                        child: Text('Cancle')),
-                                                  ),
-                                                  SizedBox(
-                                                    width: 10,
-                                                  ),
-                                                  Container(
-                                                    width: 80,
-                                                    child: ElevatedButton(
-                                                        onPressed: () {
-                                                          varicarController
-                                                                  .text =
-                                                              selectValue1;
-
-                                                          Navigator.of(context)
-                                                              .pop();
-                                                        },
-                                                        child: Text('Ok')),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    );
+          children: <Widget>[
+            Container(
+              height: 40,
+              child: Row(
+                children: const [
+                  SizedBox(width: 100),
+                  Icon(Icons.directions_car_outlined),
+                  SizedBox(width: 10),
+                  Text('Brand',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500))
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              child: Column(
+                children: [
+                  Container(
+                    height: 55,
+                    width: inputWidth,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                            width: inputWidth / 2 - 10,
+                            height: 55,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(255, 216, 214, 214)),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  setState(() {
+                                    selectedButton = 'Hyundai';
                                   });
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: selectedButton == 'Hyundai'
+                                        ? Colors.blue
+                                        : Colors.white),
+                                child: Text(
+                                  'Hyundai',
+                                  style: TextStyle(
+                                      color: selectedButton == 'Hyundai'
+                                          ? Colors.white
+                                          : Colors.black),
+                                ))),
+                        Container(
+                          width: inputWidth / 2 - 10,
+                          height: 55,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(255, 216, 214, 214)),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  selectedButton = 'Kia';
                                 });
-                          },
-                          icon: Icon(Icons.arrow_drop_down)),
-                    ],
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: selectedButton == 'Kia'
+                                      ? Colors.blue
+                                      : Colors.white),
+                              child: Text(
+                                'Kia',
+                                style: TextStyle(
+                                    color: selectedButton == 'Kia'
+                                        ? Colors.white
+                                        : Colors.black),
+                              )),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                
-          Container(
-                     width: inputWidth,
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Container(
+                    width: inputWidth,
+                    height: 55,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                            width: inputWidth / 2 - 10,
+                            height: 55,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(255, 216, 214, 214)),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  setState(() {
+                                    selectedButton = 'Daewoo';
+                                  });
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: selectedButton == 'Daewoo'
+                                        ? Colors.blue
+                                        : Colors.white),
+                                child: Text(
+                                  'Daewoo',
+                                  style: TextStyle(
+                                      color: selectedButton == 'Daewoo'
+                                          ? Colors.white
+                                          : Colors.black),
+                                ))),
+                        Container(
+                          width: inputWidth / 2 - 10,
+                          height: 55,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(255, 216, 214, 214)),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  selectedButton = 'Renault';
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: selectedButton == 'Renault'
+                                      ? Colors.blue
+                                      : Colors.white),
+                              child: Text(
+                                'Renault',
+                                style: TextStyle(
+                                    color: selectedButton == 'Renault'
+                                        ? Colors.white
+                                        : Colors.black),
+                              )),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Container(
+                    width: inputWidth,
+                    height: 55,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                            width: inputWidth / 2 - 10,
+                            height: 55,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(255, 216, 214, 214)),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  setState(() {
+                                    selectedButton = 'SsangYong';
+                                  });
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor:
+                                        selectedButton == 'SsangYong'
+                                            ? Colors.blue
+                                            : Colors.white),
+                                child: Text(
+                                  'SsangYong',
+                                  style: TextStyle(
+                                      color: selectedButton == 'SsangYong'
+                                          ? Colors.white
+                                          : Colors.black),
+                                ))),
+                        Container(
+                          width: inputWidth / 2 - 10,
+                          height: 55,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(255, 216, 214, 214)),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  selectedButton = 'Alpheon';
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: selectedButton == 'Alpheon'
+                                      ? Colors.blue
+                                      : Colors.white),
+                              child: Text(
+                                'Alpheon ',
+                                style: TextStyle(
+                                    color: selectedButton == 'Alpheon'
+                                        ? Colors.white
+                                        : Colors.black),
+                              )),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Container(
+                    width: inputWidth,
+                    height: 55,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                            width: inputWidth / 2 - 10,
+                            height: 55,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(255, 216, 214, 214)),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  setState(() {
+                                    selectedButton = 'Proto';
+                                  });
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: selectedButton == 'Proto'
+                                        ? Colors.blue
+                                        : Colors.white),
+                                child: Text(
+                                  'Proto',
+                                  style: TextStyle(
+                                      color: selectedButton == 'Proto'
+                                          ? Colors.white
+                                          : Colors.black),
+                                ))),
+                        Container(
+                          width: inputWidth / 2 - 10,
+                          height: 55,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(255, 216, 214, 214)),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  selectedButton = 'Asia Motors';
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      selectedButton == 'Asia Motors'
+                                          ? Colors.blue
+                                          : Colors.white),
+                              child: Text(
+                                'Asia Motors',
+                                style: TextStyle(
+                                    color: selectedButton == 'Asia Motors'
+                                        ? Colors.white
+                                        : Colors.black),
+                              )),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Container(
+                    width: inputWidth,
+                    height: 55,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                            width: inputWidth / 2 - 10,
+                            height: 55,
+                            decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: Color.fromARGB(255, 216, 214, 214)),
+                                borderRadius: BorderRadius.circular(5)),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  setState(() {
+                                    selectedButton = 'volvo';
+                                  });
+                                },
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: selectedButton == 'volvo'
+                                        ? Colors.blue
+                                        : Colors.white),
+                                child: Text(
+                                  'volvo',
+                                  style: TextStyle(
+                                      color: selectedButton == 'volvo'
+                                          ? Colors.white
+                                          : Colors.black),
+                                ))),
+                        Container(
+                          width: inputWidth / 2 - 10,
+                          height: 55,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Color.fromARGB(255, 216, 214, 214)),
+                              borderRadius: BorderRadius.circular(5)),
+                          child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  selectedButton = 'Genesis';
+                                });
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: selectedButton == 'Genesis'
+                                      ? Colors.blue
+                                      : Colors.white),
+                              child: Text(
+                                'Genesis',
+                                style: TextStyle(
+                                    color: selectedButton == 'Genesis'
+                                        ? Colors.white
+                                        : Colors.black),
+                              )),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      varifiedCarDialog();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: inputWidth,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(5)),
+                          border: Border.all(color: Colors.black)),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Icon(Icons.directions_car_filled),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Expanded(child: Text('Varified Car')),
+                          SizedBox(width: 110),
+                          // Text();
+                          Text('${selectValue1}'),
+
+                          IconButton(
+                              onPressed: () {
+                                varifiedCarDialog();
+                              },
+                              icon: Icon(Icons.arrow_drop_down)),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: inputWidth,
                     child: DropdownButtonFormField<String>(
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -618,13 +884,12 @@ LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
                       },
                     ),
                   ),
-          
-                SizedBox(
-                  height: 20,
-                ),
-          Container(
-            width: inputWidth,
-            child: TextFormField(
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    width: inputWidth,
+                    child: TextFormField(
                       controller: locationController,
                       validator: (String? name) {
                         if (name!.isEmpty) {
@@ -635,7 +900,8 @@ LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
                       style: TextStyle(color: Colors.black),
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(5))),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
                           labelText: "Enter location",
                           hintStyle: TextStyle(color: Colors.black),
                           focusedBorder: OutlineInputBorder(
@@ -643,34 +909,33 @@ LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.black))),
                     ),
-          ),
-           
-                SizedBox(
-                  height: 10,
-                ),
-                   Container(
-                  height: 40,
-                  child: Row(
-                    children: [
-                      SizedBox(width: 10),
-                      Icon(Icons.directions_car_outlined),
-                      SizedBox(width: 10),
-                      Text('Car Details',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500))
-                    ],
                   ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-              Container(
-                 width: inputWidth,
-                child: TextFormField(
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    height: 40,
+                    child: Row(
+                      children: [
+                        SizedBox(width: 10),
+                        Icon(Icons.directions_car_outlined),
+                        SizedBox(width: 10),
+                        Text('Car Details',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500))
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    width: inputWidth,
+                    child: TextFormField(
                       controller: carNameController,
-                     validator: (String? name) {
+                      validator: (String? name) {
                         if (name!.isEmpty) {
                           return "Please Enter Car name";
                         }
@@ -678,7 +943,8 @@ LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
                       },
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(5))),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
                           labelText: "Car Name",
                           hintStyle: TextStyle(color: Colors.black),
                           focusedBorder: OutlineInputBorder(
@@ -686,14 +952,13 @@ LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.black))),
                     ),
-              ),
-          
-                SizedBox(
-                  height: 8,
-                ),
-        Container(
-            width: inputWidth,
-          child: TextFormField(
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    width: inputWidth,
+                    child: TextFormField(
                       controller: carDescriptionController,
                       validator: (String? name) {
                         if (name!.isEmpty) {
@@ -703,7 +968,8 @@ LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
                       },
                       decoration: InputDecoration(
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(5))),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
                           labelText: "Car description",
                           hintStyle: TextStyle(color: Colors.black),
                           focusedBorder: OutlineInputBorder(
@@ -711,14 +977,13 @@ LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.black))),
                     ),
-        ),
-              
-                const SizedBox(
-                  height: 8,
-                ),
-                 Container(
-                     width: inputWidth,
-                   child: TextFormField(
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    width: inputWidth,
+                    child: TextFormField(
                       keyboardType: TextInputType.number,
                       validator: (String? name) {
                         if (name!.isEmpty) {
@@ -734,7 +999,8 @@ LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
                             style: TextStyle(color: Colors.black),
                           ),
                           border: OutlineInputBorder(
-                              borderRadius: BorderRadius.all(Radius.circular(5))),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
                           labelText: "Price*",
                           hintStyle: TextStyle(color: Colors.black),
                           focusedBorder: OutlineInputBorder(
@@ -742,568 +1008,292 @@ LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints)
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.black))),
                     ),
-                 ),
-             
-                const SizedBox(
-                  height: 8,
-                ),
-                Container(
-                  height: 65,
-                    width: inputWidth,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                          width: inputWidth / 2 - 10,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Text(showYear),
-                            SizedBox(
-                               width: inputWidth / 2 - 100,
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                selectYear(context);
-                              },
-                              child: const Icon(
-                                Icons.calendar_month,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-
-                      // tyre
-
-                      Container(
-                        width: inputWidth / 2 - 10,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Expanded(child: Text('Tyre')),
-                            SizedBox(
-                              width: 29,
-                            ),
-                            Text('${selectValue2}'),
-                            IconButton(
-                                onPressed: () {
-                                  showDialog(
-                                      context: context,
-                                      builder: (context) {
-                                        return StatefulBuilder(builder:
-                                            (context, StateSetter setState) {
-                                          return Dialog(
-                                            elevation: 16,
-                                            child: Container(
-                                              height: 220,
-                                              width: 45,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(5))),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                    height: 50,
-                                                    decoration: BoxDecoration(
-                                                      border: Border(
-                                                        bottom: BorderSide(
-                                                            color:
-                                                                Color.fromRGBO(
-                                                                    158,
-                                                                    158,
-                                                                    158,
-                                                                    1)),
-                                                      ),
-                                                      color: Colors.white,
-                                                    ),
-                                                    child: Center(
-                                                        child: Text('Status')),
-                                                  ),
-                                                  Container(
-                                                    height: 120,
-                                                    child: Column(
-                                                      children: <Widget>[
-                                                        Container(
-                                                          height: 60,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border(
-                                                              bottom: BorderSide(
-                                                                  color: Colors
-                                                                      .grey
-                                                                      .shade500),
-                                                            ),
-                                                            color: Colors.white,
-                                                          ),
-                                                          child: ListTile(
-                                                            title: Text('NEW'),
-                                                            leading: Radio(
-                                                              value: 'NEW',
-                                                              groupValue:
-                                                                  selectValue2,
-                                                              onChanged:
-                                                                  (value) {
-                                                                setState(() {
-                                                                  selectValue2 =
-                                                                      value
-                                                                          .toString();
-                                                                });
-                                                              },
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Container(
-                                                          height: 60,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border(
-                                                              bottom: BorderSide(
-                                                                  color: Colors
-                                                                      .grey
-                                                                      .shade500),
-                                                            ),
-                                                            color: Colors.white,
-                                                          ),
-                                                          child: ListTile(
-                                                            title: Text('OLD'),
-                                                            leading: Radio(
-                                                              //  value: 2,
-                                                              value: 'OLD',
-                                                              groupValue:
-                                                                  selectValue2,
-                                                              onChanged:
-                                                                  (value) {
-                                                                setState(() {
-                                                                  selectValue2 =
-                                                                      value
-                                                                          .toString();
-                                                                });
-                                                              },
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    height: 50,
-                                                    decoration:
-                                                        const BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.only(
-                                                              bottomLeft: Radius
-                                                                  .circular(5),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          5)),
-                                                    ),
-                                                    child: Row(
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 55,
-                                                        ),
-                                                        Container(
-                                                          width: 80,
-                                                          child: ElevatedButton(
-                                                              onPressed: () {
-                                                                Navigator.of(
-                                                                        context)
-                                                                    .pop();
-                                                              },
-                                                              child: Text(
-                                                                  'Cancle')),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 10,
-                                                        ),
-                                                        Container(
-                                                          width: 80,
-                                                          child: ElevatedButton(
-                                                              onPressed: () {
-                                                                tyrefieldController
-                                                                        .text =
-                                                                    selectValue2;
-
-                                                                Navigator.of(
-                                                                        context)
-                                                                    .pop();
-                                                              },
-                                                              child:
-                                                                  Text('Ok')),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          );
-                                        });
-                                      });
-                                },
-                                icon: Icon(Icons.arrow_drop_down)),
-                          ],
-                        ),
-                      ),
-                    ],
                   ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Container(
-                  height: 60,
-                   width: inputWidth,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      // accidental
-                      Container(
-                         width: inputWidth / 2 - 10,
-                        height: 60,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 20,
+                  const SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    height: 65,
+                    width: inputWidth,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        InkWell(
+                          onTap: () {
+                            selectYear(context);
+                          },
+                          child: Container(
+                            width: inputWidth / 2 - 10,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            Expanded(child: Text('Accidental')),
-                            Text('${selectValue3}'),
-                            IconButton(
-                                onPressed: () {
-                                  showDialog(
-                                      context: context,
-                                      builder: (context) {
-                                        return StatefulBuilder(builder:
-                                            (context, StateSetter setState) {
-                                          return Dialog(
-                                            elevation: 16,
-                                            child: Container(
-                                              height: 220,
-                                              width: 45,
-                                              decoration: BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(5))),
-                                              child: Column(
-                                                children: [
-                                                  Container(
-                                                    height: 50,
-                                                    decoration: BoxDecoration(
-                                                      border: Border(
-                                                        bottom: BorderSide(
-                                                            color: Colors
-                                                                .grey.shade500),
-                                                      ),
-                                                      color: Colors.white,
-                                                    ),
-                                                    child: Center(
-                                                        child: Text('Status')),
-                                                  ),
-                                                  Container(
-                                                    height: 120,
-                                                    child: Column(
-                                                      children: <Widget>[
-                                                        Container(
-                                                          height: 60,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border(
-                                                              bottom: BorderSide(
-                                                                  color: Colors
-                                                                      .grey
-                                                                      .shade500),
-                                                            ),
-                                                            color: Colors.white,
-                                                          ),
-                                                          child: ListTile(
-                                                            title: Text('YES'),
-                                                            leading: Radio(
-                                                              value: 'YES',
-                                                              groupValue:
-                                                                  selectValue3,
-                                                              onChanged:
-                                                                  (value) {
-                                                                setState(() {
-                                                                  selectValue3 =
-                                                                      value
-                                                                          .toString();
-                                                                });
-                                                              },
-                                                            ),
-                                                          ),
-                                                        ),
-                                                        Container(
-                                                          height: 60,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            border: Border(
-                                                              bottom: BorderSide(
-                                                                  color: Colors
-                                                                      .grey
-                                                                      .shade500),
-                                                            ),
-                                                            color: Colors.white,
-                                                          ),
-                                                          child: ListTile(
-                                                            title: Text('NO'),
-                                                            leading: Radio(
-                                                              //  value: 2,
-                                                              value: 'NO',
-                                                              groupValue:
-                                                                  selectValue3,
-                                                              onChanged:
-                                                                  (value) {
-                                                                setState(() {
-                                                                  selectValue3 =
-                                                                      value
-                                                                          .toString();
-                                                                });
-                                                              },
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                  Container(
-                                                    height: 50,
-                                                    decoration:
-                                                        const BoxDecoration(
-                                                      borderRadius:
-                                                          BorderRadius.only(
-                                                              bottomLeft: Radius
-                                                                  .circular(5),
-                                                              bottomRight:
-                                                                  Radius
-                                                                      .circular(
-                                                                          5)),
-                                                    ),
-                                                    child: Row(
-                                                      children: [
-                                                        SizedBox(
-                                                          width: 55,
-                                                        ),
-                                                        Container(
-                                                          width: 80,
-                                                          child: ElevatedButton(
-                                                              onPressed: () {
-                                                                Navigator.of(
-                                                                        context)
-                                                                    .pop();
-                                                              },
-                                                              child: Text(
-                                                                  'Cancle')),
-                                                        ),
-                                                        SizedBox(
-                                                          width: 10,
-                                                        ),
-                                                        Container(
-                                                          width: 80,
-                                                          child: ElevatedButton(
-                                                              onPressed: () {
-                                                                accidentalController
-                                                                        .text =
-                                                                    selectValue3;
-
-                                                                Navigator.of(
-                                                                        context)
-                                                                    .pop();
-                                                              },
-                                                              child:
-                                                                  Text('Ok')),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          );
-                                        });
-                                      });
-                                },
-                                icon: Icon(Icons.arrow_drop_down)),
-                          ],
-                        ),
-                      ),
-
-                      Container(
-                        height: 60,
-                         width: inputWidth / 2 - 10,
-                        decoration: BoxDecoration(
-                          border: Border.all(),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton2<String>(
-                              isExpanded: true,
-                              hint: Row(
-                                children: [
-                                  SizedBox(
-                                    width: 20,
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Text(showYear),
+                                SizedBox(
+                                  width: inputWidth / 2 - 100,
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    selectYear(context);
+                                  },
+                                  child: const Icon(
+                                    Icons.calendar_month,
                                   ),
-                                  Text(
-                                    'Select color',
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+
+                        // tyre
+
+                        InkWell(
+                          onTap: () {
+                            showTyreDialog();
+                          },
+                          child: Container(
+                            width: inputWidth / 2 - 10,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Expanded(child: Text('Tyre')),
+                                SizedBox(
+                                  width: 29,
+                                ),
+                                Text('${selectValue2}'),
+                                IconButton(
+                                    onPressed: () {
+                                      showTyreDialog();
+                                    },
+                                    icon: Icon(Icons.arrow_drop_down)),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    height: 60,
+                    width: inputWidth,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // accidental
+                        InkWell(
+                          onTap: () {
+                            showAccidentalDialog();
+                          },
+                          child: Container(
+                            width: inputWidth / 2 - 10,
+                            height: 60,
+                            decoration: BoxDecoration(
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Row(
+                              children: [
+                                SizedBox(
+                                  width: 20,
+                                ),
+                                Expanded(child: Text('Accidental')),
+                                Text('${selectValue3}'),
+                                IconButton(
+                                    onPressed: () {
+                                      showAccidentalDialog();
+                                    },
+                                    icon: Icon(Icons.arrow_drop_down)),
+                              ],
+                            ),
+                          ),
+                        ),
+
+                        Container(
+                          height: 60,
+                          width: inputWidth / 2 - 10,
+                          decoration: BoxDecoration(
+                          //  border: Border.all(),
+                       //   borderRadius: BorderRadius.circular(2),
+                          ),
+                          child: DropdownButtonFormField<String>(
+                          
+                          
+                            decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderRadius:
+                                       BorderRadius.circular(10),
+                                        ),
+                                hintStyle: TextStyle(color: Colors.black),
+                                focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Colors.black,width: 1)),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(10),
+                                    borderSide: BorderSide(color: Colors.black,width: 1)
+                                    )
+                               
+                                        ),
+
+                            validator: (String? name) {
+                              if (name!.isEmpty) {
+                                return "Please Enter city";
+                              }
+                              return null;
+                            },
+                            isExpanded: true,
+                            hint: Row(
+                              children: [
+                                Icon(
+                                  Icons.location_city,
+                                  color: Colors.black,
+                                ),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Expanded(
+                                  child: Text(
+                                    'Select city',
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
                                     ),
-                                    overflow: TextOverflow.ellipsis,
                                   ),
-                                ],
-                              ),
-                              items: colors
-                                  .map(
-                                      (String item) => DropdownMenuItem<String>(
-                                            value: item,
-                                            child: Text(
+                                ),
+                              ],
+                            ),
+                            items: colors
+                                .map((String item) => DropdownMenuItem<String>(
+                                      value: item,
+                                       child: Text(
                                               item,
                                               style: const TextStyle(
                                                 fontSize: 14,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black,
+                                               
+                                                color: Color.fromARGB(255, 51, 50, 50),
                                               ),
                                               overflow: TextOverflow.ellipsis,
                                             ),
-                                          ))
-                                  .toList(),
-                              value: selectedColor,
-                              onChanged: (String? value) {
-                                setState(() {
-                                  selectedColor = value;
-                                });
-                              },
-                              dropdownStyleData: DropdownStyleData(
-                                width: 360,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(4),
-                                ),
-                                elevation: 8,
-                                offset: const Offset(10, 100),
-                              )),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-
-
-                Container(
-                  height: 40,
-                  child: Row(
-                    children: [
-                      SizedBox(width: 70),
-                      Icon(Icons.image),
-                      SizedBox(width: 10),
-                      Text('Car Images',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500))
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                _load
-                    ? Container(
-                        height: 200,
-                        width: 200,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: FileImage(image),
-                            fit: BoxFit.cover,
+                                    ))
+                                .toList(),
+                           value: selectedColor,
+                            onChanged: (String? value) {
+                              setState(() {
+                                 selectedColor = value;
+                              });
+                         
+                            },
                           ),
-                          borderRadius: BorderRadius.circular(20),
+                      
                         ),
-                        padding: const EdgeInsets.all(15.0),
-                      )
-                    : Padding(
-                        padding: const EdgeInsets.all(15.0),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20.0),
-                          child: Container(
-                            height: 200,
-                            width: 200,
-                            color: Colors.white,
-                            child: Center(
-                              child: Text(
-                                'No Image Selected',
-                                style: TextStyle(color: Colors.black),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    height: 40,
+                    child: Row(
+                      children: [
+                        SizedBox(width: 70),
+                        Icon(Icons.image),
+                        SizedBox(width: 10),
+                        Text('Car Images',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w500))
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  _load
+                      ? Container(
+                          height: 200,
+                          width: 200,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: FileImage(image),
+                              fit: BoxFit.cover,
+                            ),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          padding: const EdgeInsets.all(15.0),
+                        )
+                      : Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Container(
+                              height: 200,
+                              width: 200,
+                              color: Colors.white,
+                              child: Center(
+                                child: Text(
+                                  'No Image Selected',
+                                  style: TextStyle(color: Colors.black),
+                                ),
                               ),
                             ),
                           ),
                         ),
+                  ElevatedButton(
+                    onPressed: () {
+                      getImageFromGallery(ImageSource.gallery);
+                    },
+                    child: Text('Upload Picture'),
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.blue,
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50.0),
                       ),
-                ElevatedButton(
-                  onPressed: () {
-                    getImageFromGallery(ImageSource.gallery);
-                  },
-                  child: Text('Upload Picture'),
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.blue,
-                    elevation: 3,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50.0),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: 8,
-                ),
-                Container(
-                  height: 20,
-                  width: 320,
-                  child: Center(
-                      child: Text(
-                    'Please select car images',
-                    style: TextStyle(color: Colors.black),
-                  )),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-              ],
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Container(
+                    height: 20,
+                    width: 320,
+                    child: Center(
+                        child: Text(
+                      'Please select car images',
+                      style: TextStyle(color: Colors.black),
+                    )),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
-      )),
-    );
-   
-});
- 
-   
+          ],
+        )),
+      );
+    });
   }
 }
 

@@ -10,6 +10,19 @@ bool allDropDownVal = false;
 String? selectedReligion;
 String? selectedCommunity;
 String? selectedCountry;
+String? selectedCountry1;
 TextEditingController emailController = TextEditingController();
 TextEditingController phoneController = TextEditingController();
-   String selectedGender = '';
+String selectedGender = '';
+String selectedCountryCode = '+92';
+String phoneNumber ="";
+String VerificatiobId ="";
+String SmsCode = "";
+TextEditingController mpinController = TextEditingController();
+List<Map<String, String>> countryList = [];
+
+String getCombinedValue(Map<String, String> country) {
+    return '${country['code']} - ${country['name']}';
+  }
+
+  
