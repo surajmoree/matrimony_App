@@ -81,8 +81,8 @@ class _your_PhotoState extends State<your_Photo> with SingleTickerProviderStateM
                   child: gallaryFile == null
                       ? Image.asset(
                           selectedGender == 'Male'
-                              ? 'assets/images/male.png'
-                              : 'assets/images/female.png',
+                              ? 'assets/images/male.jpg'
+                              : 'assets/images/female.jpg',
                           fit: BoxFit.cover,
                         )
                       : Image.file(
@@ -96,27 +96,7 @@ class _your_PhotoState extends State<your_Photo> with SingleTickerProviderStateM
         ),
       
 
-         
-                 
-      
-      
-              // CircleAvatar(
-              //   radius: 56, //radius of avatar
-              //   backgroundColor: gallaryFile == null ? Colors.green : Colors.pink,
-              //   child: ClipOval(
-              //     child: SizedBox.fromSize(
-              //       size: Size.fromRadius(53),
-              //       child: gallaryFile == null
-              //           ? Image.asset(selectedGender == 'Male' ? 'assets/images/male.png' : 'assets/images/female.png',
-              //               fit: BoxFit.cover)
-              //           : Image.file(
-              //               gallaryFile!,
-              //               fit: BoxFit.cover,
-              //             ),
-              //     ),
-              //   ),
-              // ),
-
+     
             
 
             SizedBox(
@@ -220,7 +200,7 @@ class _your_PhotoState extends State<your_Photo> with SingleTickerProviderStateM
                   child: SizedBox.fromSize(
                     size: Size.fromRadius(47),
                     child: 
-                        Image.asset(selectedGender == 'Male' ? 'assets/images/male.png' : 'assets/images/female.png',
+                        Image.asset(selectedGender == 'Male' ? 'assets/images/male.jpg' : 'assets/images/female.jpg',
                             fit: BoxFit.cover)
                     
                   ),
@@ -319,7 +299,7 @@ class _your_PhotoState extends State<your_Photo> with SingleTickerProviderStateM
        
         });
               },
-              child: Text('Do it later...',style: TextStyle(color: Colors.pink),)),
+              child: Text('Do it later...',style: TextStyle(color: Colors.pink,fontSize: 16),)),
           
           ],
         ),

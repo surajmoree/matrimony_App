@@ -15,6 +15,7 @@ TextEditingController emailController = TextEditingController();
 TextEditingController phoneController = TextEditingController();
 String selectedGender = '';
 String selectedCountryCode = '+92';
+  // late Country selectedCountryCode;
 String phoneNumber ="";
 String VerificatiobId ="";
 String SmsCode = "";

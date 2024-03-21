@@ -100,7 +100,7 @@ class _your_nameState extends State<your_name> {
                               focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color:
-                                          Color.fromARGB(255, 10, 154, 221))),
+                                          Colors.pink,width: 2)),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black))),
                         ),
@@ -129,7 +129,7 @@ class _your_nameState extends State<your_name> {
                               focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color:
-                                          Color.fromARGB(255, 10, 154, 221))),
+                                          Colors.pink,width: 2)),
                               enabledBorder: OutlineInputBorder(
                                   borderSide: BorderSide(color: Colors.black))),
                         ),
@@ -137,16 +137,17 @@ class _your_nameState extends State<your_name> {
                       SizedBox(
                         height: 20,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(right: 135),
-                        child: Text(
-                          'Date of birth',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 30,
-                              color: Color.fromARGB(255, 240, 135, 170)),
-                        ),
-                      ),
+                     Container(
+                      width: inputWidth,
+                       child: Text(
+                            'Date of birth',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 30,
+                                color: Color.fromARGB(255, 240, 135, 170)),
+                          ),
+                     ),
+                  
                       SizedBox(
                         height: 20,
                       ),
@@ -176,7 +177,7 @@ class _your_nameState extends State<your_name> {
                                             TextStyle(color: Colors.black),
                                         focusedBorder: OutlineInputBorder(
                                             borderSide:
-                                                BorderSide(color: Colors.blue)),
+                                                BorderSide(color: Colors.pink,width: 2)),
                                         enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Colors.black))),
@@ -209,7 +210,7 @@ class _your_nameState extends State<your_name> {
                                             TextStyle(color: Colors.black),
                                         focusedBorder: OutlineInputBorder(
                                             borderSide:
-                                                BorderSide(color: Colors.blue)),
+                                                BorderSide(color: Colors.pink,width: 2)),
                                         enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Colors.black))),
@@ -243,7 +244,7 @@ class _your_nameState extends State<your_name> {
                                             TextStyle(color: Colors.black),
                                         focusedBorder: OutlineInputBorder(
                                             borderSide:
-                                                BorderSide(color: Colors.blue)),
+                                                BorderSide(color: Colors.pink,width: 2)),
                                         enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Colors.black))),

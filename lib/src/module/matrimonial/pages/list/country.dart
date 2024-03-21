@@ -1,6 +1,6 @@
-final List<String> country =
+final List<String> country1 =
 [
-'Frequently used Countries',
+
 'Australia',
 'Canada',
 'India',
@@ -12,7 +12,6 @@ final List<String> country =
 'USA',
 'UAE',
 'UK',
-'All Countries',
 'Afganistan',
 'Albania',
 'Argentina',

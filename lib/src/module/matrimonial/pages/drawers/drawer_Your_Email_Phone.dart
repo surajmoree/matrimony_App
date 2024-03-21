@@ -7,6 +7,7 @@ import 'package:strava_clone/src/module/matrimonial/pages/drawers/drawer_Your_Pr
 
 import '../variables.dart';
 import 'drawer_Country_Code.dart';
+import 'drawer_Your_Religion.dart';
 
 class your_Email_Phone extends StatefulWidget {
   @override
@@ -32,13 +33,26 @@ class _your_Email_PhoneState extends State<your_Email_Phone> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
+       appBar: AppBar(
+         leading: IconButton(
+    icon: Icon(Icons.arrow_back_sharp,color: Colors.pink,),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) =>  your_religion()));
+          },
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0,
+      ),
+      body:   LayoutBuilder(builder: (BuildContext context,BoxConstraints constraints )
+                      {
+                        double inputWidth = constraints.maxWidth - 50;
+                        return  SingleChildScrollView(
         child: Container(
           child: Column(
             children: [
-              const SizedBox(
-                height: 130,
-              ),
+                 const SizedBox(
+              height: 80,
+            ),
               Center(
                 child: Container(
                   height: 80,
@@ -92,16 +106,17 @@ class _your_Email_PhoneState extends State<your_Email_Phone> {
               const SizedBox(
                 height: 30,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 195),
-                child: Text(
-                  'Email ID',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      color: Color.fromARGB(255, 240, 135, 170)),
-                ),
-              ),
+             Container(
+              width:  inputWidth,
+               child: Text(
+                    'Email ID',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Color.fromARGB(255, 240, 135, 170)),
+                  ),
+             ),
+           
               SizedBox(
                 height: 20,
               ),
@@ -124,7 +139,7 @@ class _your_Email_PhoneState extends State<your_Email_Phone> {
                       hintStyle: TextStyle(color: Colors.black),
                       focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Color.fromARGB(255, 9, 180, 231),
+                              color: Colors.pink,
                               width: 2)),
                       enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.black))),
@@ -133,16 +148,17 @@ class _your_Email_PhoneState extends State<your_Email_Phone> {
               SizedBox(
                 height: 60,
               ),
-              const Padding(
-                padding: EdgeInsets.only(right: 170),
-                child: Text(
-                  'Mobile no',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 30,
-                      color: Color.fromARGB(255, 240, 135, 170)),
-                ),
-              ),
+            Container(
+              width: inputWidth,
+              child: Text(
+                    'Mobile no',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Color.fromARGB(255, 240, 135, 170)),
+                  ),
+            ),
+            
               const SizedBox(
                 height: 30,
               ),
@@ -160,17 +176,22 @@ class _your_Email_PhoneState extends State<your_Email_Phone> {
                   }
                 },
                 child: Container(
-                  width: 300,
+                    width: inputWidth,
                   height: 62,
+           
                   decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(5)),
+                      BoxDecoration(
+                           
+                        borderRadius: BorderRadius.circular(5)),
                   child: Row(
                     children: [
                       Container(
+                        
                         width: 80,
                         height: 62,
                         decoration: BoxDecoration(
-                            border: Border.all(),
+                        
+                            border: Border.all(color:selectedCountryCode.isNotEmpty ? Colors.pink : Colors.grey,width: 2 ),
                             borderRadius: BorderRadius.circular(5)),
                         child: Row(
                           children: [
@@ -215,7 +236,7 @@ class _your_Email_PhoneState extends State<your_Email_Phone> {
                                           BorderRadius.all(Radius.circular(5))),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                        color: Color.fromARGB(255, 9, 180, 231),
+                                        color: Colors.pink,
                                         width: 2),
                                   ),
                                   enabledBorder: OutlineInputBorder(
@@ -336,7 +357,13 @@ class _your_Email_PhoneState extends State<your_Email_Phone> {
             ],
           ),
         ),
-      ),
+      );
+                      }),
+      
+      
+     
+
+      
     );
   }
 }

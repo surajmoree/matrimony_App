@@ -51,7 +51,10 @@ class _EditableContainerState extends State<EditableContainer> {
               maxLength: 4000,
               decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(5),borderSide: BorderSide(color: Colors.black)),
-                focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(5),borderSide: BorderSide(color: Colors.blue))
+                 focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    color: Colors.pink,
+                                    width: 2)),
 
               ),
             

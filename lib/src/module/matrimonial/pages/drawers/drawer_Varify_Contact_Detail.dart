@@ -4,6 +4,7 @@ import 'package:strava_clone/src/boot.dart';
 
 import '../list/country_code.dart';
 import '../variables.dart';
+import 'drawer_warning.dart';
 
 class verify_contact extends StatefulWidget {
   @override
@@ -132,6 +133,40 @@ class _verify_contactState extends State<verify_contact> {
                 children: [
                   InkWell(
                     onTap: () {
+                        Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              pageBuilder:
+                                  (context, animation, secondaryAnimation) {
+                                return Scaffold(
+                                  // Wrapping with Scaffold for app bar and other functionalities
+                                  body: warning(),
+                                );
+                              },
+                              transitionDuration: Duration(milliseconds: 1500),
+                              transitionsBuilder: (context, animation,
+                                  secondaryAnimation, child) {
+                                var begin = Offset(0.0, 1.0);
+                                var end = Offset.zero;
+                                var curve = Curves.easeOutQuart;
+
+                                var tween = Tween(begin: begin, end: end)
+                                    .chain(CurveTween(curve: curve));
+                                var offsetAnimation = animation.drive(tween);
+
+                                return SlideTransition(
+                                  position: animation.drive(Tween(
+                                          begin: Offset(0.0, 1.0),
+                                          end: Offset.zero)
+                                      .chain(CurveTween(
+                                          curve: Curves.easeOutQuart))),
+                                  child: child,
+                                  // position: offsetAnimation,
+                                  // child: child,
+                                );
+                              },
+                            ),
+                          );
                       print('verify');
                     },
                     child: Container(
@@ -183,7 +218,7 @@ class _verify_contactState extends State<verify_contact> {
           builder: (context, setState) {
             return SingleChildScrollView(
               child: Dialog(
-                insetPadding: EdgeInsets.fromLTRB(0, 280, 0, 280),
+                insetPadding: EdgeInsets.fromLTRB(0, 280, 0, 270),
                 child: buildEditDialog(context, setState),
               ),
             );
@@ -228,12 +263,15 @@ class _verify_contactState extends State<verify_contact> {
                     child: DropdownButton<String>(
                       isExpanded: true,
                       hint: Text('Select a country'),
-                      value: selectedCountry,
+                      value: selectedCountry1,
                       onChanged: (String? newValue) {
                         setState(() {
                           //    selectedCountry = newValue;
-                          selectedCountry = newValue!;
-                          selectedCountryCode = newValue.split('_')[0];
+                          selectedCountry1 = newValue!;
+                         selectedCountryCode = countryList
+    .firstWhere((country) => getCombinedValue(country) == selectedCountry1)['code']
+    .toString();
+                      //    selectedCountryCode = newValue.split('_')[0];
                         });
                       },
                       items: countryList.map<DropdownMenuItem<String>>(
@@ -244,12 +282,12 @@ class _verify_contactState extends State<verify_contact> {
                             children: [
                               Radio<String>(
                                 value: getCombinedValue(country),
-                                groupValue: selectedCountry,
+                                groupValue: selectedCountry1,
                                 onChanged: (String? newValue) {
                                   setState(() {
-                                    // selectedCountry = newValue;
-                                    selectedCountry = newValue!;
-                                    //    selectedCountryCode = newValue.split('_')[0];
+                             
+                                    selectedCountry1 = newValue!;
+                                  
                                     selectedCountryCode =
                                         country['code'].toString();
                                   });
@@ -265,6 +303,7 @@ class _verify_contactState extends State<verify_contact> {
                       }).toList(),
                     ),
                   ),
+                 
                   Container(
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: TextFormField(

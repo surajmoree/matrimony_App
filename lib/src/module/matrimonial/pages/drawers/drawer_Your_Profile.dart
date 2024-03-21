@@ -7,6 +7,7 @@ import 'package:strava_clone/src/module/matrimonial/pages/drawers/Sub_Cast.dart'
 import '../list/state.dart';
 import 'Cities.dart';
 import 'drawer_Marital_Status.dart';
+import 'drawer_Your_Email_Phone.dart';
 
 class your_profile extends StatefulWidget {
   @override
@@ -23,12 +24,26 @@ class _your_profileState extends State<your_profile>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
+         appBar: AppBar(
+         leading: IconButton(
+    icon: Icon(Icons.arrow_back_sharp,color: Colors.pink,),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) =>  your_Email_Phone()));
+          },
+        ),
+        backgroundColor: Colors.white,
+        elevation: 0,
+      ),
+        body: 
+             LayoutBuilder(builder: (BuildContext context,BoxConstraints constraints )
+                      {
+                        double inputWidth = constraints.maxWidth - 50;
+                        return  SingleChildScrollView(
       child: Container(
         child: Column(
           children: [
             const SizedBox(
-              height: 60,
+              height: 80,
             ),
             Center(
               child: Container(
@@ -48,16 +63,17 @@ class _your_profileState extends State<your_profile>
             const SizedBox(
               height: 30,
             ),
-            const Padding(
-              padding: EdgeInsets.only(right: 220),
-              child: Text(
-                'State',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Color.fromARGB(255, 240, 135, 170)),
-              ),
-            ),
+          Container(
+            width: inputWidth,
+            child: Text(
+                  'State',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      color: Color.fromARGB(255, 240, 135, 170)),
+                ),
+          ),
+          
             SizedBox(
               height: 20,
             ),
@@ -96,7 +112,7 @@ class _your_profileState extends State<your_profile>
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all()),
-                width: 300,
+                width: inputWidth,
                 height: 60,
                 child: Row(
                   children: [
@@ -114,16 +130,23 @@ class _your_profileState extends State<your_profile>
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(right: 240, top: 20),
-              child: Text(
-                'City',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Color.fromARGB(255, 240, 135, 170)),
-              ),
+             
+            SizedBox(
+              height: 20,
             ),
+      Container(
+        width: inputWidth,
+        child: Text(
+                  'City',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      color: Color.fromARGB(255, 240, 135, 170)),
+                ),
+      ),
+        
+    
+           
             SizedBox(
               height: 20,
             ),
@@ -165,7 +188,7 @@ class _your_profileState extends State<your_profile>
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all()),
-                width: 300,
+                width: inputWidth,
                 height: 60,
                 child: Row(
                   children: [
@@ -179,15 +202,23 @@ class _your_profileState extends State<your_profile>
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(right: 80, top: 20, bottom: 20),
-              child: Text(
-                'Sub-community',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                    color: Color.fromARGB(255, 240, 135, 170)),
-              ),
+              
+            SizedBox(
+              height: 20,
+            ),
+         Container(
+          width: inputWidth,
+           child: Text(
+                  'Sub-community',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 30,
+                      color: Color.fromARGB(255, 240, 135, 170)),
+                ),
+         ),
+             
+            SizedBox(
+              height: 20,
             ),
             InkWell(
               onTap: () {
@@ -221,7 +252,7 @@ class _your_profileState extends State<your_profile>
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
                     border: Border.all()),
-                width: 300,
+                width: inputWidth,
                 height: 60,
                 child: Row(
                   children: [
@@ -238,26 +269,7 @@ class _your_profileState extends State<your_profile>
             SizedBox(
               height: 30,
             ),
-            // Container(
-            //   width: 300,
-            //   height: 60,
-            //   decoration: BoxDecoration(
-            //     borderRadius: BorderRadius.circular(5),
-            //     border: Border.all(),
-            //   ),
-            //   child: CheckboxListTile(
-            //     activeColor: Color.fromARGB(255, 240, 135, 170),
-            //     //    tileColor: Color.fromARGB(255, 240, 135, 170),
-            //     controlAffinity: ListTileControlAffinity.leading,
-            //     title: const Text('Not particular about my partners community'),
-            //     value: timeDilation != 1.0,
-            //     onChanged: (bool? value) {
-            //       setState(() {
-            //         timeDilation = value! ? 10.0 : 1.0;
-            //       });
-            //     },
-            //   ),
-            // ),
+        
             SizedBox(
               height: 30,
             ),
@@ -315,6 +327,9 @@ class _your_profileState extends State<your_profile>
           ],
         ),
       ),
-    ));
+    );
+                      }),
+        
+       );
   }
 }

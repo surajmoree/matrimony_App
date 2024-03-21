@@ -76,18 +76,17 @@ class _ResidentialFormState extends State<ResidentialForm> {
                               ),
                               color: Colors.white,
                             ),
-                            child: ListTile(
+                            child: RadioListTile(
                               title: Text('YES'),
-                              leading: Radio(
-                                value: 'YES',
-                                groupValue: selectValue1,
-                                onChanged: (value) {
+                              value: 'YES',
+                               groupValue: selectValue1,
+                                  onChanged: (value) {
                                   setState(() {
                                     selectValue1 = value.toString();
                                   });
                                 },
-                              ),
-                            ),
+                                ),
+                          
                           ),
                           Container(
                             height: 60,
@@ -97,19 +96,18 @@ class _ResidentialFormState extends State<ResidentialForm> {
                               ),
                               color: Colors.white,
                             ),
-                            child: ListTile(
+                            child: 
+                            RadioListTile(
                               title: Text('NO'),
-                              leading: Radio(
-                                //  value: 2,
-                                value: 'NO',
+                              value: 'NO',
                                 groupValue: selectValue1,
-                                onChanged: (value) {
+                                     onChanged: (value) {
                                   setState(() {
                                     selectValue1 = value.toString();
                                   });
                                 },
-                              ),
-                            ),
+                                ),
+                         
                           ),
                         ],
                       ),
@@ -196,18 +194,18 @@ class _ResidentialFormState extends State<ResidentialForm> {
                               ),
                               color: Colors.white,
                             ),
-                            child: ListTile(
-                              title: Text('NEW'),
-                              leading: Radio(
-                                value: 'NEW',
+                            child: 
+                               RadioListTile(
+                               title: Text('NEW'),
+                              value: 'NEW',
                                 groupValue: selectValue2,
-                                onChanged: (value) {
+                                     onChanged: (value) {
                                   setState(() {
                                     selectValue2 = value.toString();
                                   });
                                 },
-                              ),
-                            ),
+                                ),
+
                           ),
                           Container(
                             height: 60,
@@ -217,19 +215,18 @@ class _ResidentialFormState extends State<ResidentialForm> {
                               ),
                               color: Colors.white,
                             ),
-                            child: ListTile(
+                            child:
+                                 RadioListTile(
                               title: Text('OLD'),
-                              leading: Radio(
-                                //  value: 2,
                                 value: 'OLD',
-                                groupValue: selectValue2,
+                               groupValue: selectValue2,
                                 onChanged: (value) {
                                   setState(() {
                                     selectValue2 = value.toString();
                                   });
                                 },
-                              ),
-                            ),
+                                ),
+
                           ),
                         ],
                       ),
@@ -315,18 +312,18 @@ class _ResidentialFormState extends State<ResidentialForm> {
                               ),
                               color: Colors.white,
                             ),
-                            child: ListTile(
-                              title: Text('YES'),
-                              leading: Radio(
-                                value: 'YES',
+                            child:
+                                  RadioListTile(
+                             title: Text('YES'),
+                                 value: 'YES',
                                 groupValue: selectValue3,
                                 onChanged: (value) {
                                   setState(() {
                                     selectValue3 = value.toString();
                                   });
                                 },
-                              ),
-                            ),
+                                ),
+                         
                           ),
                           Container(
                             height: 60,
@@ -336,19 +333,17 @@ class _ResidentialFormState extends State<ResidentialForm> {
                               ),
                               color: Colors.white,
                             ),
-                            child: ListTile(
+                            child:
+                                      RadioListTile(
                               title: Text('NO'),
-                              leading: Radio(
-                                //  value: 2,
                                 value: 'NO',
-                                groupValue: selectValue3,
+                                    groupValue: selectValue3,
                                 onChanged: (value) {
                                   setState(() {
                                     selectValue3 = value.toString();
                                   });
                                 },
-                              ),
-                            ),
+                                ),
                           ),
                         ],
                       ),
@@ -450,16 +445,17 @@ class _ResidentialFormState extends State<ResidentialForm> {
             child: Column(
           children: <Widget>[
             Container(
+                width: MediaQuery.of(context).size.width * 0.97,
               height: 40,
               child: Row(
                 children: const [
-                  SizedBox(width: 100),
+                 
                   Icon(Icons.directions_car_outlined),
                   SizedBox(width: 10),
                   Text('Brand',
                       style: TextStyle(
                           color: Colors.black,
-                          fontSize: 20,
+                          fontSize: 22,
                           fontWeight: FontWeight.w500))
                 ],
               ),
@@ -810,8 +806,8 @@ class _ResidentialFormState extends State<ResidentialForm> {
                       ),
                     ),
                   ),
-                  SizedBox(
-                    height: 20,
+                 SizedBox(
+                    height: 16,
                   ),
                   Container(
                     width: inputWidth,
@@ -885,7 +881,7 @@ class _ResidentialFormState extends State<ResidentialForm> {
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 16,
                   ),
                   Container(
                     width: inputWidth,
@@ -928,8 +924,8 @@ class _ResidentialFormState extends State<ResidentialForm> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 8,
+                   SizedBox(
+                    height: 10,
                   ),
                   Container(
                     width: inputWidth,
@@ -1034,8 +1030,8 @@ class _ResidentialFormState extends State<ResidentialForm> {
                             child: Row(
                               children: [
                                 SizedBox(
-                                  width: 20,
-                                ),
+                                    width: 15
+                                  ),
                                 Text(showYear),
                                 SizedBox(
                                   width: inputWidth / 2 - 100,
@@ -1069,18 +1065,17 @@ class _ResidentialFormState extends State<ResidentialForm> {
                             child: Row(
                               children: [
                                 SizedBox(
-                                  width: 20,
+                                  width: 15,
                                 ),
                                 Expanded(child: Text('Tyre')),
-                                SizedBox(
-                                  width: 29,
-                                ),
+                               
                                 Text('${selectValue2}'),
                                 IconButton(
                                     onPressed: () {
                                       showTyreDialog();
                                     },
                                     icon: Icon(Icons.arrow_drop_down)),
+                                   
                               ],
                             ),
                           ),
@@ -1113,16 +1108,22 @@ class _ResidentialFormState extends State<ResidentialForm> {
                             ),
                             child: Row(
                               children: [
-                                SizedBox(
-                                  width: 20,
-                                ),
+                                 SizedBox(
+                                    width: 15
+                                  ),
                                 Expanded(child: Text('Accidental')),
                                 Text('${selectValue3}'),
-                                IconButton(
-                                    onPressed: () {
-                                      showAccidentalDialog();
+                                   InkWell(
+                                    onTap: () {
+                                       showAccidentalDialog();
                                     },
-                                    icon: Icon(Icons.arrow_drop_down)),
+                                    child: Icon(Icons.arrow_drop_down)),
+                                       SizedBox(
+                                    width: 8
+                                    
+                                    ,
+                                  ),
+                  
                               ],
                             ),
                           ),
@@ -1164,7 +1165,7 @@ class _ResidentialFormState extends State<ResidentialForm> {
                             hint: Row(
                               children: [
                                 Icon(
-                                  Icons.location_city,
+                                  Icons.car_repair,
                                   color: Colors.black,
                                 ),
                                 SizedBox(
@@ -1172,7 +1173,7 @@ class _ResidentialFormState extends State<ResidentialForm> {
                                 ),
                                 Expanded(
                                   child: Text(
-                                    'Select city',
+                                    'Select color',
                                     style: TextStyle(
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold,
@@ -1213,15 +1214,16 @@ class _ResidentialFormState extends State<ResidentialForm> {
                   ),
                   Container(
                     height: 40,
+                     width: MediaQuery.of(context).size.width * 0.97,
                     child: Row(
                       children: [
-                        SizedBox(width: 70),
+                     
                         Icon(Icons.image),
                         SizedBox(width: 10),
                         Text('Car Images',
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 20,
+                                fontSize: 22,
                                 fontWeight: FontWeight.w500))
                       ],
                     ),

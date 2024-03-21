@@ -67,6 +67,7 @@ dependencies:
   csc_picker: ^0.2.7
   fl_country_code_picker: ^0.1.6+1
   permission_handler: ^11.0.1
+  country_picker: ^2.0.20
 
   
   # google_maps_flutter: ^2.3.0

@@ -37,19 +37,18 @@ class _PropertySaleState extends State<PropertySale> {
               slivers: [
                 const SliverAppBar(
                   //   automaticallyImplyLeading: false,
-                     iconTheme: IconThemeData(color: Colors.blue),
+                     iconTheme: IconThemeData(color: Colors.black),
                      
                   backgroundColor: Colors.white,
                   pinned: true,
+                  elevation: 0,
                   title:  Text(
                       'Add car For Sale',
                       style: TextStyle(color: Colors.black),
                     ),
                     centerTitle: true,
              
-                  // leading: IconButton(onPressed: (){
-                  
-                  // }, icon: Icon(Icons.abc)),
+        
                
                 ),
                 SliverList(
@@ -61,18 +60,20 @@ class _PropertySaleState extends State<PropertySale> {
                           child: Column(
                             children: [
                               Container(
+                                  width: MediaQuery.of(context).size.width * 0.97,
+                               //   color: Colors.amber,
                                 height: 40,
                                 child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
+                                //  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
-                                    SizedBox(width: 65),
+                               
                                     Icon(Icons.directions_car_outlined),
                                     SizedBox(width: 10),
                                     Text(
                                       'Car Type',
                                       style: TextStyle(
                                           color: Colors.black,
-                                          fontSize: 20,
+                                          fontSize: 23,
                                           fontWeight: FontWeight.w500),
                                     )
                                   ],
