@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1053676105162",
+    "project_id": "fir-otp-2e9df",
+    "storage_bucket": "fir-otp-2e9df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053676105162:android:ad6867ba3e1bba9014b333",
+        "android_client_info": {
+          "package_name": "com.example.strava_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCj1wXl-DKvjfyAhVHtRDruvCRWUF4K1d0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

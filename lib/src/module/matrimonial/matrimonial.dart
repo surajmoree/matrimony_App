@@ -1,2 +1,2 @@
-export './pages/front_page.dart';
+//export './pages/front_page.dart';
 

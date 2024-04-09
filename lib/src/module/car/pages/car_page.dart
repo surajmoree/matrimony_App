@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../localstorage/model.dart';
-import '../localstorage/storeservice.dart';
-import 'components/addPropertySale.dart';
+import 'components/addCarRent.dart';
+import 'components/addCarSale.dart';
 import 'components/newRequest/newRequest.dart';
 
 class CarPage extends StatefulWidget {
@@ -13,40 +12,25 @@ class CarPage extends StatefulWidget {
 }
 
 class _CarPageState extends State<CarPage> {
-  final StorageService _strorageService = StorageService();
-  late List<StorageItem> _items;
-  bool _loading = true;
-
-  @override
-  void initState() {
-    super.initState();
-    initList();
-  }
-
-  void initList() async {
-    _items = await _strorageService.readAllSecureData();
-    _loading = false;
-    setState(() {});
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         leading: IconButton(
-    icon: Icon(Icons.arrow_back_sharp,color: Colors.blue,),
-          onPressed: (){
+          icon: Icon(
+            Icons.arrow_back_sharp,
+            color: Colors.blue,
+          ),
+          onPressed: () {
             Navigator.pushNamed(context, '/');
           },
         ),
-        title:
-         Text(
-                      'Add Car',
-                      style: TextStyle(color: Colors.black),
-                    ),
-
-      centerTitle: true,
+        title: Text(
+          'Add Car',
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
         backgroundColor: Colors.white,
       ),
       body: Column(
@@ -56,7 +40,6 @@ class _CarPageState extends State<CarPage> {
           ),
           ListTile(
             title: Card(
-            
               child: Container(
                 height: 70,
                 decoration: BoxDecoration(
@@ -78,7 +61,7 @@ class _CarPageState extends State<CarPage> {
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: ElevatedButton(
                             onPressed: () {
-                              Navigator.push(
+                              Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => PropertySale()));
@@ -94,7 +77,6 @@ class _CarPageState extends State<CarPage> {
           ),
           ListTile(
             title: Card(
-           
               child: Container(
                 height: 70,
                 decoration: BoxDecoration(
@@ -114,7 +96,14 @@ class _CarPageState extends State<CarPage> {
                         height: 30,
                         width: MediaQuery.of(context).size.width * 0.8,
                         child: ElevatedButton(
-                            onPressed: () {}, child: Text('For Rent')))
+                            onPressed: () {
+                              //carRent
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => carRent()));
+                            },
+                            child: Text('For Rent')))
                   ],
                 ),
               ),
@@ -125,7 +114,6 @@ class _CarPageState extends State<CarPage> {
           ),
           ListTile(
             title: Card(
-             
               child: Container(
                 height: 70,
                 decoration: BoxDecoration(

@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:strava_clone/src/module/internet/pages/offline_page.dart';
 
 import '../../module/car/car.dart';
-import '../../module/matrimonial/matrimonial.dart';
 import '../../module/module.dart';
 
 class AppRouter {
@@ -68,12 +67,12 @@ class AppRouter {
                   child: const CarPage(),
                 ));
 
-         case '/wedding':
-        return MaterialPageRoute(
-            builder: (_) => BlocProvider.value(
-                  value: _settingsCubit,
-                  child: const frontPage(),
-                ));
+        //  case '/wedding':
+        // return MaterialPageRoute(
+        //     builder: (_) => BlocProvider.value(
+        //           value: _settingsCubit,
+        //           child: const frontPage(),
+        //         ));
                 
       default:
         return null;

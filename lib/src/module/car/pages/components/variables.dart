@@ -1,26 +1,9 @@
- import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
+
+
+ 
   
-String selectedButton = '';
 
-  TextEditingController varicarController = TextEditingController();
-  String selectValue1 = '';
-  String? selectedCity;
-  TextEditingController locationController = TextEditingController();
-  TextEditingController carNameController = TextEditingController();
-  TextEditingController carDescriptionController = TextEditingController();
-  TextEditingController pricectrl = TextEditingController();
-  String showYear = ' Year';
-  DateTime _selectedYear = DateTime.now();
-  TextEditingController tyrefieldController = TextEditingController();
-  String selectValue2 = '';
-  TextEditingController accidentalController = TextEditingController();
-  String selectValue3 = '';
-  String? selectedColor;
-   late File image;
-var MyFormkey = GlobalKey<FormState>();
-    final form = MyFormkey.currentState;
  
   //  moveToNext(BuildContext context) async {
   //   final form = MyFormkey.currentState;
@@ -34,24 +17,48 @@ var MyFormkey = GlobalKey<FormState>();
   // }
 
 
-  
-  TextEditingController varicarController1 = TextEditingController();
-  String selectValue11 = '';
-  String? selectedCity1;
-  TextEditingController locationController1 = TextEditingController();
-  TextEditingController carNameController1 = TextEditingController();
-  TextEditingController carDescriptionController1 = TextEditingController();
-  TextEditingController pricectrl1 = TextEditingController();
-  String showYear1 = ' Year';
-  DateTime _selectedYear1 = DateTime.now();
-  TextEditingController tyrefieldController1 = TextEditingController();
-  String selectValue22 = '';
-  TextEditingController accidentalController1 = TextEditingController();
-  String selectValue33 = '';
-  String? selectedColor1;
-   late File image1;
+  // car for sale <Transport>
+
 // var MyFormkey1 = GlobalKey<FormState>();
 // final form1 = MyFormkey1.currentState;
 
+// car for Rent <Personal>
+/*
+  String selectedButton2 = '';
+  TextEditingController rentFrequencyCtrl = TextEditingController();
+  String selectFrequencyValue = '';
+  String? selectedCity2;
+  TextEditingController locationController2 = TextEditingController();
+  TextEditingController carNameController2 = TextEditingController();
+  TextEditingController carDescriptionController2 = TextEditingController();
+  TextEditingController pricectrl2 = TextEditingController();
+  String showYear2 = ' Year';
+  DateTime _selectedYear2 = DateTime.now();
+  TextEditingController tyrefieldController2 = TextEditingController();
+  String selectTyreValue = '';
+  TextEditingController accidentalController2 = TextEditingController();
+  String selectAccidentalValue = '';
+  String? selectedColor2;
+   File? image2;
+var MyFormkey1 = GlobalKey<FormState>();
+    final form1 = MyFormkey1.currentState;
+   //  car for Rent <Transport>
+  String selectedButton3 = '';
+  TextEditingController rentFrequencyCtrl1 = TextEditingController();
+  String selectFrequencyValue1 = '';
+  String? selectedCity3;
+  TextEditingController locationController3 = TextEditingController();
+  TextEditingController carNameController3 = TextEditingController();
+  TextEditingController carDescriptionController3 = TextEditingController();
+  TextEditingController pricectrl3 = TextEditingController();
+  String showYear3 = ' Year';
 
-
+  TextEditingController tyrefieldController3 = TextEditingController();
+  String selectTyreValue1 = '';
+  TextEditingController accidentalController3 = TextEditingController();
+  String selectAccidentalValue1 = '';
+  String? selectedColor3;
+   late File image3;
+var MyFormkey2 = GlobalKey<FormState>();
+    final form2 = MyFormkey2.currentState;
+*/
